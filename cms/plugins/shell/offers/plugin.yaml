@@ -1,0 +1,70 @@
+plugin:
+    name: 'shell.offers::lang.plugin.name'
+    description: 'shell.offers::lang.plugin.description'
+    author: shell
+    icon: oc-icon-file-text-o
+    homepage: ''
+permissions:
+    manage_offers:
+        tab: Offers
+        label: 'Edit job offers'
+    manage_stations:
+        tab: Offers
+        label: 'Edit Shell stations'
+    manage_job_positions:
+        tab: Offers
+        label: 'Edit job titles'
+    edit_shell_settings:
+        tab: Offers
+        label: 'Edit settings'
+    manage_all_offers:
+        tab: Offers
+        label: 'Edit job offers form all stations'
+    see_statistics:
+        tab: Offers
+        label: Statistics
+    manage_provinces:
+        tab: Offers
+        label: 'Manage provinces'
+    delete_job_offers:
+        tab: Offers
+        label: 'Delete job offers'
+navigation:
+    main-menu-item:
+        label: 'shell.offers::lang.plugin.name'
+        url: shell/offers/offers
+        icon: icon-file-text-o
+        permissions:
+            - manage_offers
+        order: '1'
+        sideMenu:
+            side-menu-item:
+                label: 'shell.offers::lang.offer.job-offers'
+                url: shell/offers/offers
+                icon: icon-file-text-o
+                permissions:
+                    - manage_offers
+            side-menu-item3:
+                label: 'shell.offers::lang.job-title.job-titles'
+                url: shell/offers/jobtitles
+                icon: icon-shirtsinbulk
+                permissions:
+                    - manage_job_positions
+            side-menu-item2:
+                label: 'shell.offers::lang.station.stations'
+                url: shell/offers/stations
+                icon: icon-map-marker
+                permissions:
+                    - manage_stations
+            side-menu-item5:
+                label: 'shell.offers::lang.province.provinces'
+                url: shell/offers/provinces
+                icon: icon-flag-o
+                permissions:
+                    - manage_provinces
+            side-menu-item4:
+                label: 'shell.offers::lang.statistics.statistics'
+                url: shell/offers/applications
+                icon: icon-area-chart
+                permissions:
+                    - see_statistics

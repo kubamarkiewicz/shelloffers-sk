@@ -1,0 +1,6 @@
+fields:
+    name:
+        label: 'shell.offers::lang.province.name'
+        oc.commentPosition: ''
+        span: auto
+        type: text

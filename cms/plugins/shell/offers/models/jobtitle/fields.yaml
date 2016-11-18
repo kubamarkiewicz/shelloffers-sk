@@ -1,0 +1,12 @@
+fields:
+    name:
+        label: 'shell.offers::lang.job-title.name'
+        oc.commentPosition: ''
+        span: left
+        type: text
+    offer_template:
+        label: 'shell.offers::lang.job-title.description'
+        size: giant
+        oc.commentPosition: ''
+        span: left
+        type: richeditor

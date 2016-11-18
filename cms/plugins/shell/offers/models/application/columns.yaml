@@ -1,0 +1,27 @@
+columns:
+    date:
+        label: 'shell.offers::lang.application.date'
+        type: text
+        searchable: true
+        sortable: true
+    station:
+        label: 'shell.offers::lang.station.station'
+        type: text
+        searchable: true
+        sortable: true
+        select: station_id
+        relation: offer
+    job_title:
+        label: 'shell.offers::lang.job-title.job-title'
+        type: text
+        searchable: true
+        sortable: true
+        select: job_title_id
+        relation: offer
+    offer:
+        label: 'shell.offers::lang.offer.job-offer'
+        type: text
+        searchable: true
+        sortable: true
+        select: id
+        relation: offer

@@ -1,0 +1,23 @@
+columns:
+    id:
+        label: 'shell.offers::lang.station.id'
+        type: number
+        searchable: true
+        sortable: true
+    name:
+        label: 'shell.offers::lang.station.shell-name'
+        type: text
+        searchable: true
+        sortable: true
+    city:
+        label: 'shell.offers::lang.station.city'
+        type: text
+        searchable: true
+        sortable: true
+    province:
+        label: 'shell.offers::lang.province.province'
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: province

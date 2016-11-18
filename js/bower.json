@@ -1,0 +1,26 @@
+{
+  "name": "MuscaKit Admin Panel",
+  "version": "0.0.0",
+  "authors": [
+    "Kuba Markiewicz <kuba.markiewicz@gmail.com>"
+  ],
+  "main": "css/custom.css",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
+    "jquery-validation": "^1.15.1",
+    "angular-translate": "^2.13.0",
+    "angular-translate-loader-static-files": "^2.13.0"
+  }
+}

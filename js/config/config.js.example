@@ -1,0 +1,18 @@
+
+window.config = window.config || {};
+
+window.config.env = "dev"; // dev|prod
+
+window.config.lang = "en";
+
+window.config.api = {
+
+	"urls" : {
+		"getOffers"			: "https://shelloffers.pl/pl/dev/form/cms/api-v2/offers",
+		"getJobTitles"		: "https://shelloffers.pl/pl/dev/form/cms/api-v2/job-titles",
+		"getProvinces"		: "https://shelloffers.pl/pl/dev/form/cms/api-v2/provinces",
+		"getCities"			: "https://shelloffers.pl/pl/dev/form/cms/api-v2/cities",
+		"postApplication"	: "https://shelloffers.pl/pl/dev/form/cms/api-v2/applications"
+	}
+
+}

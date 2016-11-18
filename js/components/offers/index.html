@@ -1,0 +1,90 @@
+<section class="search-offers">
+
+		<div class="container-fluid">
+
+			<h2 class="header" translate>offers.title</h2>
+
+			<form>
+
+				<div class="row">
+					<div class="col-md-8">
+						<input type="text" ng-model="filters.keyword" placeholder="{{ 'offers.keywords' | translate }}" class="form-control">
+					</div>
+					<div class="col-md-4 visible-lg-block visible-md-block">
+						<input type="submit" class="btn btn-primary search form-control" ng-click="loadOffersData(true)" value="{{ 'offers.search' | translate }}">
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-4 col-sm-6">
+						<select ng-options="item.name for item in jobTitlesData track by item.id" ng-model="filters.jobTitle" ng-change="loadProvincesData();loadOffersData(true)" class="form-control">
+							<option value="" translate>offers.job-titles-filter</option>	
+						</select>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<select ng-options="item.name for item in provincesData" ng-model="filters.province" ng-change="loadCitiesData();loadOffersData(true)" class="form-control">
+							<option value="" translate>offers.provinces-filter</option>
+						</select>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<select ng-options="item.city for item in citiesData" ng-model="filters.city" ng-change="loadOffersData(true)" class="form-control">
+							<option value="" translate>offers.cities-filter</option>
+						</select>
+					</div>
+					<div class="col-sm-6 visible-sm-block visible-xs-block">
+						<input type="submit" class="btn btn-primary search form-control" ng-click="loadOffersData(true)" value="{{ 'offers.search' | translate }}">
+					</div>
+
+				</div>				
+
+
+
+			</form>
+
+		</div><!-- /.container -->
+
+	</section>
+
+	
+
+	<section class="offers-list" ng-if="offersData">
+
+		<div class="container-fluid">
+
+			<p class="offers-count">{{ 'offers.offers-count' | translate }} {{ offersCount }}</p>
+
+			<div class="offers">
+				
+				<article ng-repeat="item in offersData">
+					
+					<header ng-click="onOfferHeaderClick($event)">
+						<h3>{{ item.job_title }} - {{ item.city }}</h3>
+						<p class="summary">{{ item.street }}</p>
+					</header>
+					
+					<main>
+						<div ng-bind-html="trustAsHtml(item.description)"></div>
+
+						<div class="row">
+							<div class="col-sm-6 col-md-4">
+								<a href="#/application/{{ item.id }}" class="apply btn btn-primary btn-block" translate>offers.apply</a>
+							</div>
+						</div>
+
+					</main>
+				</article>
+
+			</div><!-- /.offers -->
+
+			<div class="row" ng-show="showMoreButton">
+				<div class="load-more col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+					<button class="btn btn-primary btn-block" ng-click="loadNextPage()">{{ 'offers.more-offers' | translate }} ({{ offersCount - pageSize }})</button>
+				</div>
+			</div>
+
+
+		</div><!-- /.container -->
+
+
+	</section>
+

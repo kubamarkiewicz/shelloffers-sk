@@ -1,0 +1,5 @@
+columns:
+    name:
+        label: 'shell.offers::lang.province.province'
+        type: text
+        sortable: true

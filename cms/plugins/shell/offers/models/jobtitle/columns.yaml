@@ -1,0 +1,6 @@
+columns:
+    name:
+        label: 'shell.offers::lang.job-title.job-title'
+        type: text
+        searchable: true
+        sortable: true

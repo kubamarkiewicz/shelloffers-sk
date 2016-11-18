@@ -1,0 +1,9 @@
+title: 'shell.offers::lang.job-title.job-titles'
+modelClass: Shell\Offers\Models\JobTitle
+list: $/shell/offers/models/jobtitle/columns.yaml
+recordUrl: 'shell/offers/jobtitles/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: false
+toolbar:
+    buttons: list_toolbar

@@ -1,0 +1,11 @@
+name: 'shell.offers::lang.station.stations'
+modelClass: Shell\Offers\Models\Station
+form: $/shell/offers/models/station/fields.yaml
+defaultRedirect: shell/offers/stations
+create:
+    redirect: 'shell/offers/stations/update/:id'
+    redirectClose: shell/offers/stations
+update:
+    redirect: shell/offers/stations
+    redirectClose: shell/offers/stations
+preview: {  }

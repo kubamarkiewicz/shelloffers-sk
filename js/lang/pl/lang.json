@@ -1,0 +1,36 @@
+{
+	"offers" : {
+		"title" : "WYSZUKIWARKA OFERT PRACY",
+		"keywords" : "Słowa kluczowe",
+		"job-titles-filter" : "Stanowisko (wszystkie)..",
+		"provinces-filter" : "Województwo (wszystkie)..",
+		"cities-filter" : "Miasto (wszystkie)..",
+		"search" : "Szukaj",
+		"offers-count" : "Liczba ofert pracy na stacjach Shell:",
+		"apply" : "Aplikuj",
+		"more-offers" : "Zobacz pozostałe oferty:"
+	},
+
+	"application" : {
+		"title" : "FORMULARZ APLIKACYJNY",
+		"firstname" : "Imię*",
+		"lastname" : "Nazwisko*",
+		"email" : "Adres e-mail*",
+		"tel" : "Numer telefonu*",
+		"province" : "Województwo",
+		"city" : "Miasto",
+		"attachments" : "Załącz CV lub inny dokument, który chcesz dołączyć do aplikacji:",
+		"message" : "Dodatkowa wiadomość do pracodawcy",
+		"required-fields" : "* - wymagane pola",
+		"send" : "Wyślij",
+		"field-required" : "To pole jest wymagane",
+		"email-required" : "Podaj adres e-mail"
+	},
+
+	"application-sent" : {
+		"title" : "FORMULARZ APLIKACYJNY",
+		"application-sent" : "Twoja aplikacja została wysłana. Dziękujemy.",
+		"ok" : "OK"
+	}
+
+}

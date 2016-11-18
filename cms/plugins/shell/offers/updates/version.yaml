@@ -1,0 +1,53 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table shell_offers_offers'
+    - builder_table_create_shell_offers_offers.php
+1.0.3:
+    - 'Updated table shell_offers_offers'
+    - builder_table_update_shell_offers_offers.php
+1.0.4:
+    - 'Created table shell_offers_stations'
+    - builder_table_create_shell_offers_stations.php
+1.0.5:
+    - 'Created table shell_offers_positions'
+    - builder_table_create_shell_offers_positions.php
+1.0.6:
+    - 'Updated table shell_offers_positions'
+    - builder_table_update_shell_offers_job_titles.php
+1.0.7:
+    - 'Drop table shell_offers_stations'
+    - builder_table_delete_shell_offers_stations.php
+1.0.8:
+    - 'Created table shell_offers_stations'
+    - builder_table_create_shell_offers_stations_2.php
+1.0.9:
+    - 'Updated table shell_offers_offers'
+    - builder_table_update_shell_offers_offers_2.php
+1.0.10:
+    - 'Updated table shell_offers_offers'
+    - builder_table_update_shell_offers_offers_3.php
+1.0.11:
+    - 'Updated table shell_offers_offers'
+    - builder_table_update_shell_offers_offers_4.php
+1.0.12:
+    - 'Updated table shell_offers_offers'
+    - builder_table_update_shell_offers_offers_5.php
+1.0.13:
+    - 'Created table shell_offers_applications'
+    - builder_table_create_shell_offers_applications.php
+1.0.14:
+    - 'Created table shell_offers_provinces'
+    - builder_table_create_shell_offers_provinces.php
+1.0.15:
+    - 'Updated table shell_offers_stations'
+    - builder_table_update_shell_offers_stations.php
+1.0.16:
+    - 'Updated table shell_offers_job_titles'
+    - builder_table_update_shell_offers_job_titles_2.php
+1.0.17:
+    - 'Updated table shell_offers_stations'
+    - builder_table_update_shell_offers_stations_2.php
+1.0.18:
+    - 'Updated table shell_offers_offers'
+    - builder_table_update_shell_offers_offers_7.php

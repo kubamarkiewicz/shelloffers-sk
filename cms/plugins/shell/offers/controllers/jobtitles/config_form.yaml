@@ -1,0 +1,11 @@
+name: 'shell.offers::lang.job-title.job-titles'
+modelClass: Shell\Offers\Models\JobTitle
+form: $/shell/offers/models/jobtitle/fields.yaml
+defaultRedirect: shell/offers/jobtitles
+create:
+    redirect: 'shell/offers/jobtitles/update/:id'
+    redirectClose: shell/offers/jobtitles
+update:
+    redirect: shell/offers/jobtitles
+    redirectClose: shell/offers/jobtitles
+preview: {  }

@@ -1,0 +1,10 @@
+name: 'shell.offers::lang.province.provinces'
+modelClass: Shell\Offers\Models\Province
+form: $/shell/offers/models/province/fields.yaml
+defaultRedirect: shell/offers/provinces
+create:
+    redirect: 'shell/offers/provinces/update/:id'
+    redirectClose: shell/offers/provinces
+update:
+    redirect: shell/offers/provinces
+    redirectClose: shell/offers/provinces

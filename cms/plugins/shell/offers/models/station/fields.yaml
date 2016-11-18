@@ -1,0 +1,42 @@
+fields:
+    id:
+        label: 'shell.offers::lang.station.id'
+        oc.commentPosition: ''
+        span: left
+        required: 1
+        type: text
+    name:
+        label: 'shell.offers::lang.station.shell-name'
+        oc.commentPosition: ''
+        span: left
+        required: 0
+        type: text
+    email:
+        label: 'shell.offers::lang.station.email'
+        oc.commentPosition: ''
+        span: left
+        required: 1
+        type: text
+    province:
+        label: 'shell.offers::lang.province.province'
+        oc.commentPosition: ''
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+        required: 1
+        type: relation
+    post_code:
+        label: 'shell.offers::lang.station.post-code'
+        oc.commentPosition: ''
+        span: left
+        type: text
+    city:
+        label: 'shell.offers::lang.station.city'
+        oc.commentPosition: ''
+        span: left
+        type: text
+    street:
+        label: 'shell.offers::lang.station.street'
+        oc.commentPosition: ''
+        span: left
+        type: text

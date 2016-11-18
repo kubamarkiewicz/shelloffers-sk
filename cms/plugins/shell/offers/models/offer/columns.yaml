@@ -1,0 +1,39 @@
+columns:
+    station:
+        label: 'shell.offers::lang.station.station'
+        type: text
+        searchable: true
+        sortable: true
+        select: 'concat(id, '' '', name)'
+        relation: station
+    job_title:
+        label: 'shell.offers::lang.job-title.job-title'
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: job_title
+    province:
+        label: 'shell.offers::lang.province.province'
+        type: text
+        searchable: false
+        sortable: false
+    city:
+        label: 'shell.offers::lang.station.city'
+        type: text
+        searchable: true
+        sortable: true
+        select: city
+        relation: station
+    activated_from:
+        label: 'shell.offers::lang.offer.valid-from'
+        type: text
+        sortable: true
+    activated_to:
+        label: 'shell.offers::lang.offer.valid-to'
+        type: text
+        sortable: true
+    published:
+        label: 'shell.offers::lang.offer.published'
+        type: switch
+        sortable: true

@@ -1,0 +1,11 @@
+title: 'shell.offers::lang.offer.job-offers'
+modelClass: Shell\Offers\Models\Offer
+list: $/shell/offers/models/offer/columns.yaml
+recordUrl: 'shell/offers/offers/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: false
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

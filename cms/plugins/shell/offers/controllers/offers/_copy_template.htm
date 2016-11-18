@@ -1,0 +1,14 @@
+
+    <script>
+        
+        $(function(){
+
+            $('#Form-field-Offer-job_title').change(function() {
+                $.get('<?= Backend::url('shell/offers/jobtitles/api-get-template') ?>/' + $(this).val(), function(data) {
+                    $('#RichEditor-formDescription-textarea-description').froalaEditor('html.set', data);
+                });
+            });
+
+        });
+
+    </script>
