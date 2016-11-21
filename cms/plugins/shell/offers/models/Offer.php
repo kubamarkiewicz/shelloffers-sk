@@ -50,9 +50,11 @@ class Offer extends Model
 
 
     public function getProvinceAttribute() {
-         $station = Station::find($this->station_id);
-         $province = Province::find($station->province_id);
-         return $province->name;
+        if ($station = Station::find($this->station_id)) {
+            if ($province = Province::find($station->province_id)) {
+                return $province->name;
+            }
+        }
     }
 
 
