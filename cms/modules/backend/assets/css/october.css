@@ -847,7 +847,7 @@ body.outer .layout > .layout-row > .layout-cell .outer-form-container .horizonta
 body.outer .layout > .layout-row > .layout-cell .outer-form-container .horizontal-form input{vertical-align:top;margin-right:9px;display:inline-block;border:none;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:0}
 body.outer .layout > .layout-row > .layout-cell .outer-form-container .horizontal-form input.width-1{width:160px}
 body.outer .layout > .layout-row > .layout-cell .outer-form-container .horizontal-form input.width-2{width:100%}
-body.outer .layout > .layout-row > .layout-cell .outer-form-container .horizontal-form button{text-align:left;font-size:18px;font-weight:600;height:50px;vertical-align:top;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;display:block;width:100%;margin-top:20px;text-shadow:none;background:#dd1d21;box-shadow:none;}
+body.outer .layout > .layout-row > .layout-cell .outer-form-container .horizontal-form button{text-align:left;font-size:18px;font-weight:600;height:50px;vertical-align:top;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;display:block;width:100%;margin-top:20px;text-shadow:none;background:#dd1d21;box-shadow:none;padding-left:15px;}
 body.outer .layout > .layout-row > .layout-cell .outer-form-container .horizontal-form button.login-button{display:block;font-size:18px;height:50px;text-shadow:none;box-shadow:none;margin-top:20px;text-align:left;padding-left:15px;}
 body.outer .layout > .layout-row > .layout-cell .outer-form-container .forgot-password{margin-top:15px;font-size:13px;top:8px}
 body.outer .layout > .layout-row > .layout-cell .outer-form-container .forgot-password a{color:#333333;}
