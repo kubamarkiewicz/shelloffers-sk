@@ -85,7 +85,7 @@ app.controller('ApplicationController',function($scope, $rootScope, $http, $rout
             document.location = '#/application-sent';
         })
         .error(function(){
-            alert('Error');
+            alert('Error sending');
         });
          
          
