@@ -53,7 +53,7 @@ tabs:
             type: checkboxlist
 
         station:
-            label: 'Stacja paliw (dot. tylko Site Managerów)'
+            label: 'shell.offers::lang.user.site'
             nameFrom: full_name
             descriptionFrom: description
             type: relation

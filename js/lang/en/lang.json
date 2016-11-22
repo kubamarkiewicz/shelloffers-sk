@@ -1,0 +1,36 @@
+{
+	"offers" : {
+		"title" : "FIND YOUR JOB OFFER",
+		"keywords" : "Keyword",
+		"job-titles-filter" : "Position (all)",
+		"provinces-filter" : "Province (all)",
+		"cities-filter" : "City (all)",
+		"search" : "Search",
+		"offers-count" : "Results found:",
+		"apply" : "Apply",
+		"more-offers" : "View other job offers:"
+	},
+
+	"application" : {
+		"title" : "APPLICATION FORM",
+		"firstname" : "Name*",
+		"lastname" : "Surname*",
+		"email" : "E-mail address*",
+		"tel" : "Telephone number*",
+		"province" : "Province",
+		"city" : "City",
+		"attachments" : "Attach your CV or another document which you'd like to add to your application",
+		"message" : "Additional message for the employer",
+		"required-fields" : "*required field",
+		"send" : "Send",
+		"field-required" : "This field is required",
+		"email-required" : "Add your e-mail address"
+	},
+
+	"application-sent" : {
+		"title" : "APPLICATION FORM",
+		"application-sent" : "Your application has been sent. Thank you!",
+		"ok" : "OK"
+	}
+
+}
