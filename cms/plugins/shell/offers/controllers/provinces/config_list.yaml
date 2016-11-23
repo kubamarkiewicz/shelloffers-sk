@@ -5,6 +5,10 @@ recordUrl: 'shell/offers/provinces/update/:id'
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: true
+# Default sorting column
+defaultSort:
+    column: name
+    direction: asc
 toolbar:
     buttons: list_toolbar
     search:
