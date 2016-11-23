@@ -1,0 +1,14 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+import:
+    title: Import states
+    modelClass: Shell\Offers\Models\ProvinceImport
+    list: $/shell/offers/models/province/columns.yaml
+    redirect: shell/offers/provinces
+
+export:
+    title: Export states
+    modelClass: Shell\Offers\Models\ProvinceExport
+    list: $/shell/offers/models/province/columns.yaml
