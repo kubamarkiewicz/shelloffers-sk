@@ -55,9 +55,9 @@ app.controller('OffersController', function($scope, $rootScope, $http, config) {
     $scope.loadCitiesData();
 
 
-    $scope.loadOffersData = function(resetPage = false)
+    $scope.loadOffersData = function(resetPage)
     {
-        if (resetPage) {
+        if (resetPage !== undefined && resetPage == true) {
             $scope.offersData = [];
             $scope.page = 1;
             $scope.showMoreButton = false;
