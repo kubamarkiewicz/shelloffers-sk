@@ -103,4 +103,14 @@ app.controller('OffersController', function($scope, $rootScope, $http, config) {
         $('html, body').scrollTop(article.offset().top);
     }
 
+
+    // load number of offers
+    $http({
+        method  : 'GET',
+        url     : config.api.urls.getOffers
+    })
+    .success(function(data) {
+        $scope.offersCount = data.totalCount;
+    });
+
 });
