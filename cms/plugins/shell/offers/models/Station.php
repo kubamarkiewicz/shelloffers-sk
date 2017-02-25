@@ -43,5 +43,6 @@ class Station extends Model
     {
         return $this->id . " " . $this->name;
     }
+
     
 }

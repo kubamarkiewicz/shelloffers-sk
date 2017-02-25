@@ -3,6 +3,8 @@
 use Model;
 use Shell\Offers\Models\Station;
 use Shell\Offers\Models\Province;
+use DB;
+use BackendAuth;
 
 /**
  * Model
@@ -49,12 +51,32 @@ class Offer extends Model
     ];
 
 
-    public function getProvinceAttribute() {
+    public function getProvinceAttribute() 
+    {
         if ($station = Station::find($this->station_id)) {
             if ($province = Province::find($station->province_id)) {
                 return $province->name;
             }
         }
+    } 
+
+    public function getStationOptions()
+    {
+        $query = Station::select('id', 'name');
+        $user = BackendAuth::getUser();
+
+        if ($user->isManager()) {
+            $query->where('id', '=', $user->station_id);
+        }
+        else if ($user->isRetailer()) {
+            $query->whereIn('id', $user->getStationsIds());
+        }
+
+        $options = $query->lists('name', 'id');
+        if ($options) foreach ($options as $key => $value) {
+            $options[$key] = $key.' '.$value;
+        }
+        return $options;
     }
 
 

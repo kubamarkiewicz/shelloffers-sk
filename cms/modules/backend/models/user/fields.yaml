@@ -3,12 +3,6 @@
 # ===================================
 
 fields:
-    is_superuser:
-        context: [create, update]
-        tab: backend::lang.user.permissions
-        label: backend::lang.user.superuser
-        type: switch
-        comment: backend::lang.user.superuser_comment
 
 tabs:
     defaultTab: backend::lang.user.account
@@ -66,13 +60,15 @@ tabs:
             descriptionFrom: description
             type: relation
             context: [create, update]
+    
+        is_superuser:
+            context: [create, update]
+            tab: backend::lang.user.permissions
+            label: backend::lang.user.superuser
+            type: switch
+            comment: backend::lang.user.superuser_comment
 
 secondaryTabs:
     fields:
-        avatar:
-            label: backend::lang.user.avatar
-            type: fileupload
-            mode: image
-            imageHeight: 250
-            imageWidth: 250
+
 

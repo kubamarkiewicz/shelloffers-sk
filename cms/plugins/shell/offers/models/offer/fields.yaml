@@ -6,7 +6,7 @@ fields:
         descriptionFrom: description
         span: left
         required: 1
-        type: relation
+        type: dropdown
     published:
         label: 'shell.offers::lang.offer.published'
         span: auto

@@ -53,5 +53,11 @@ class Offers extends Controller
             $query->whereIn('station_id', $this->user->getStationsIds());
         }
     }
+    
+
+    public function getStationOptions()
+    {
+        return ['au' => 'Australia', 'ca' => 'Canada'];
+    }
 
 }
