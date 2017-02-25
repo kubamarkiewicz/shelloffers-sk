@@ -52,22 +52,33 @@
 
         <script>
 
-            /* hard coded values !!! */
-            var managersGroupId = 2;
-            var retailesGroupId = 4;
+            var managersGroupId = '<?=$this->vars['formModel']->getManagersGroupId()?>';
+            var retailesGroupId = '<?=$this->vars['formModel']->getRetailersGroupId()?>';
 
             $(document).ready(function(){
 
                 function enableStationField() {
                     if ($("#checkbox_Form-field-User-groups_" + managersGroupId).prop('checked')) {
+                        $("#Form-field-User-station-group").show();
                         $("#Form-field-User-station").prop('disabled', false);
                     }
                     else {
-                        $("#Form-field-User-station").prop('disabled', 'disabled');
-                        $("#Form-field-User-station option[value='']").attr('selected', true);
+                        $("#Form-field-User-station").val('');
+                        $("#Form-field-User-station-group").hide();
                     } 
                 }
                 enableStationField();
+
+                function enableStationsField() {
+                    if ($("#checkbox_Form-field-User-groups_" + retailesGroupId).prop('checked')) {
+                        $("#Form-field-User-stations-group").show();
+                    }
+                    else {
+                        $("#Relation-formStations-stations input").prop('checked', false);
+                        $("#Form-field-User-stations-group").hide();
+                    } 
+                }
+                enableStationsField();
                 
                 $('#Form-field-User-groups-group input').change(function(){
                 
@@ -76,6 +87,8 @@
 
                     // enable/disable station field
                     enableStationField();
+                    enableStationsField();
+
                 });
 
             }); 

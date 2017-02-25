@@ -1,0 +1,37 @@
+fields:
+    submitting_products_activated:
+        label: 'Activate submitting products'
+        span: left
+        default: 0
+        type: switch
+    voting_activated:
+        label: 'Activate voting'
+        span: left
+        type: switch
+tabs:
+    fields:
+        mail_sender_address:
+            label: 'E-mail sender address'
+            span: auto
+            type: text
+            tab: E-mail
+        mail_sender_name:
+            label: 'E-mail sender name'
+            span: auto
+            type: text
+            tab: E-mail
+        mail_to_new_submission:
+            label: 'Send new product submission to this address'
+            span: auto
+            type: text
+            tab: E-mail
+        homepage_background_url:
+            label: 'Homepage background URL'
+            span: full
+            type: text
+            tab: Backgrounds
+        submit_product_background_url:
+            label: 'Submit product background URL'
+            span: full
+            type: text
+            tab: Backgrounds

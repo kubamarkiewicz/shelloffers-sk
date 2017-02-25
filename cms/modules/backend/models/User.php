@@ -25,7 +25,9 @@ class User extends UserBase
         'email' => 'required|between:6,255|email|unique:backend_users',
         'login' => 'required|between:2,255|unique:backend_users',
         'password' => 'required:create|between:4,255|confirmed',
-        'password_confirmation' => 'required_with:password|between:4,255'
+        'password_confirmation' => 'required_with:password|between:4,255',
+        'station' => 'required',
+        'stations' => 'required'
     ];
 
 
@@ -47,8 +49,36 @@ class User extends UserBase
 
 
     /* hard coded values !!! */
-    public $managersGroupId = 2;
-    public $retailersGroupId = 4;
+    /* TODO: find groups ids based on group codes (manager/retailer) */
+
+    public function getManagersGroupId() 
+    {
+        return 2;
+    }
+
+    public function getRetailersGroupId() 
+    {
+        return 4;
+    }
+
+    public function isManager() 
+    {
+        return $this->groups[0]->id == $this->getManagersGroupId();
+    }
+
+    public function isRetailer() 
+    {
+        return $this->groups[0]->id == $this->getRetailersGroupId();
+    }
+
+    public function getStationsIds() {
+        $return = [];
+        if ($this->stations) foreach ($this->stations as $station) {
+            $return[] = $station->id;
+        }
+        return $return;
+    }
+
 
 
     /**
@@ -153,11 +183,16 @@ class User extends UserBase
 
     public function beforeValidate()
     {
-        if ($this->groups[0]->id == $this->managersGroupId) {
+        if ($this->isManager()) {
             $this->rules['station'] = 'required';
+        } else {
+            $this->rules['station'] = '';
         }
-        if ($this->groups[0]->id == $this->retailersGroupId) {
+        if ($this->isRetailer()) {
             $this->rules['stations'] = 'required';
+        } else {
+            $this->rules['stations'] = '';
         }
     }
+
 }

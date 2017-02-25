@@ -14,6 +14,7 @@ class Offers extends Controller
         'manage_offers' 
     ];
 
+
     public function __construct()
     {
         parent::__construct();
@@ -23,7 +24,7 @@ class Offers extends Controller
     public function formBeforeCreate($model)
     {
         $model->created_by_id = $this->user->id;
-        if (!$this->user->hasAccess('manage_all_offers')) {
+        if ($this->user->isManager()) {
             $model->station_id = $this->user->station->id;
         }
     }
@@ -33,7 +34,7 @@ class Offers extends Controller
         if (!$form->getField('created_by')->value) {
             $form->getField('created_by')->value = $this->user->id;
         }
-        if (!$this->user->hasAccess('manage_all_offers')) {
+        if ($this->user->isManager()) {
             $form->getField('station')->value = $this->user->station_id;
             $form->getField('station')->disabled = 1;
         }
@@ -45,8 +46,11 @@ class Offers extends Controller
 
     public function listExtendQuery($query)
     {
-        if (!$this->user->hasAccess('manage_all_offers')) {
+        if ($this->user->isManager()) {
             $query->where('station_id', '=', $this->user->station_id);
+        }
+        else if ($this->user->isRetailer()) {
+            $query->whereIn('station_id', $this->user->getStationsIds());
         }
     }
 

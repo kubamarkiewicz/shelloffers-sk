@@ -12,4 +12,20 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerSettings()
+    {
+        return [
+            'settings' => [
+                'label'       => 'Settings',
+                'description' => 'Manage custom settings.',
+                'category'    => 'Shell Job Offers Settings',
+                'icon'        => 'icon-cog',
+                'class'       => 'Shell\Offers\Models\Settings',
+                'order'       => 0,
+                'keywords'    => 'security location',
+                'permissions' => ['edit_shell_settings']
+            ]
+        ];
+    }
+
 }
