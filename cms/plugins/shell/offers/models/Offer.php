@@ -80,6 +80,26 @@ class Offer extends Model
     }
 
 
+    public function getForExport($station_id = null)
+    {
+        $sql = "SELECT o.*, CONCAT(s.id, ' ', s.name) AS station, t.name AS job_title, p.name AS province, s.city
+                FROM $this->table AS o
+                LEFT JOIN shell_offers_stations AS s ON o.station_id = s.id
+                LEFT JOIN shell_offers_job_titles AS t ON o.job_title_id = t.id
+                LEFT JOIN shell_offers_provinces AS p ON s.province_id = p.id
+                WHERE o.deleted_at IS NULL ";
+        if ($station_id) {
+            $sql .= "AND o.station_id='".(int)$station_id."' ";
+        }
+
+        $sql .= "ORDER BY id DESC";
+        // echo $sql;
+        $data = DB::select(DB::raw($sql));
+        // dump($data); exit;
+        return $data;
+    }
+
+
 
 
 }

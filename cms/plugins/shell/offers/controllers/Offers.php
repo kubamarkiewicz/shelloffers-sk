@@ -2,6 +2,10 @@
 
 use Backend\Classes\Controller;
 use BackendMenu;
+use PHPExcel;
+use PHPExcel_IOFactory;
+use Shell\Offers\Models\Offer as Offer;
+
 
 class Offers extends Controller
 {
@@ -53,11 +57,69 @@ class Offers extends Controller
             $query->whereIn('station_id', $this->user->getStationsIds());
         }
     }
-    
+   
 
-    public function getStationOptions()
+    function export() 
     {
-        return ['au' => 'Australia', 'ca' => 'Canada'];
+        $model = new Offer();
+        $station_id = $this->user->hasAccess('manage_all_offers') ? null : $this->user->station_id;
+        $data = $model->getForExport($station_id);
+
+        // Create new PHPExcel object
+        $excel = new PHPExcel();
+        $excel->setActiveSheetIndex(0);
+        $sheet = $excel->getActiveSheet();
+
+        $sheet->setCellValueByColumnAndRow(0, 1, trans('shell.offers::lang.offer.id'));
+        $sheet->setCellValueByColumnAndRow(1, 1, trans('shell.offers::lang.station.station'));
+        $sheet->setCellValueByColumnAndRow(2, 1, trans('shell.offers::lang.job-title.job-title'));
+        $sheet->setCellValueByColumnAndRow(3, 1, trans('shell.offers::lang.province.province'));
+        $sheet->setCellValueByColumnAndRow(4, 1, trans('shell.offers::lang.station.city'));
+        $sheet->setCellValueByColumnAndRow(5, 1, trans('shell.offers::lang.offer.valid-from'));
+        $sheet->setCellValueByColumnAndRow(6, 1, trans('shell.offers::lang.offer.valid-to'));
+        $sheet->setCellValueByColumnAndRow(7, 1, trans('shell.offers::lang.offer.published'));
+
+        $sheet->getColumnDimension('A')->setWidth(15);
+        $sheet->getColumnDimension('B')->setWidth(30);
+        $sheet->getColumnDimension('C')->setWidth(30);
+        $sheet->getColumnDimension('D')->setWidth(20);
+        $sheet->getColumnDimension('E')->setWidth(20);
+        $sheet->getColumnDimension('F')->setWidth(15);
+        $sheet->getColumnDimension('G')->setWidth(15);
+        $sheet->getColumnDimension('H')->setWidth(15);
+
+        $sheet->getStyle('A')->getAlignment()->setHorizontal('left');
+        $sheet->getStyle('H')->getAlignment()->setHorizontal('left');
+
+        if ($data) foreach ($data as $key => $item) {
+            $sheet->setCellValueByColumnAndRow(0, $key+2, $item->id);
+            $sheet->setCellValueByColumnAndRow(1, $key+2, $item->station);
+            $sheet->setCellValueByColumnAndRow(2, $key+2, $item->job_title);
+            $sheet->setCellValueByColumnAndRow(3, $key+2, $item->province);
+            $sheet->setCellValueByColumnAndRow(4, $key+2, $item->city);
+            $sheet->setCellValueByColumnAndRow(5, $key+2, $item->activated_from);
+            $sheet->setCellValueByColumnAndRow(6, $key+2, $item->activated_to);
+            $sheet->setCellValueByColumnAndRow(7, $key+2, $item->published ? trans('backend::lang.list.column_switch_true') : trans('backend::lang.list.column_switch_false'));
+        }
+        
+        // Rename worksheet
+        $excel->getActiveSheet()->setTitle(trans('shell.offers::lang.offer.job-offers'));
+
+        // Redirect output to a client’s web browser (Excel2007)
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="'.trans('shell.offers::lang.offer.job-offers').' '.date("Y-m-d H-i").'.xlsx"');
+        header('Cache-Control: max-age=0');
+        // If you're serving to IE 9, then the following may be needed
+        header('Cache-Control: max-age=1');
+        // If you're serving to IE over SSL, then the following may be needed
+        header ('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
+        header ('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT'); // always modified
+        header ('Cache-Control: cache, must-revalidate'); // HTTP/1.1
+        header ('Pragma: public'); // HTTP/1.0
+        $excelWriter = PHPExcel_IOFactory::createWriter($excel, 'Excel2007');
+        $excelWriter->save('php://output');
+        exit;
     }
+
 
 }

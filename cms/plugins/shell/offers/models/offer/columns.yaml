@@ -1,4 +1,10 @@
 columns:
+    id:
+        label: 'shell.offers::lang.offer.id'
+        type: text
+        searchable: true
+        sortable: true
+        width: 30px
     station:
         label: 'shell.offers::lang.station.station'
         type: text
