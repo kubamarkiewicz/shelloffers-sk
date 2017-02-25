@@ -42,5 +42,6 @@
     ],
     'user' => [
         'site' => 'Site (required only for Site Managers)',
+        'sites' => 'Sites (required only for Retailers)',
     ],
 ];

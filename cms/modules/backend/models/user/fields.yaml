@@ -60,6 +60,13 @@ tabs:
             emptyOption: ' '
             context: [create, update]
 
+        stations:
+            label: 'shell.offers::lang.user.sites'
+            nameFrom: full_name
+            descriptionFrom: description
+            type: relation
+            context: [create, update]
+
 secondaryTabs:
     fields:
         avatar:

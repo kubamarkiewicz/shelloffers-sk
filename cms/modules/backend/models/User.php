@@ -37,12 +37,19 @@ class User extends UserBase
     ];
 
     public $belongsToMany = [
-        'groups' => ['Backend\Models\UserGroup', 'table' => 'backend_users_groups']
+        'groups' => ['Backend\Models\UserGroup', 'table' => 'backend_users_groups'],
+        'stations' => ['Shell\Offers\Models\Station', 'table' => 'backend_users_stations']
     ];
 
     public $attachOne = [
         'avatar' => ['System\Models\File']
     ];
+
+
+    /* hard coded values !!! */
+    public $managersGroupId = 2;
+    public $retailersGroupId = 4;
+
 
     /**
      * Purge attributes from data set.
@@ -143,10 +150,14 @@ class User extends UserBase
         return $result;
     }
 
+
     public function beforeValidate()
     {
-        if ($this->groups[0]->id == 2) {
+        if ($this->groups[0]->id == $this->managersGroupId) {
             $this->rules['station'] = 'required';
+        }
+        if ($this->groups[0]->id == $this->retailersGroupId) {
+            $this->rules['stations'] = 'required';
         }
     }
 }
