@@ -1,5 +1,7 @@
 <?php namespace Shell\Offers;
 
+require_once __DIR__.'/vendor/autoload.php';
+
 use System\Classes\PluginBase;
 
 class Plugin extends PluginBase

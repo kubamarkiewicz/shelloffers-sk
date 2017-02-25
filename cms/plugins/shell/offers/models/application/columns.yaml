@@ -1,4 +1,10 @@
-columns:
+columns:    
+    id:
+        label: 'shell.offers::lang.application.id'
+        type: text
+        searchable: true
+        sortable: true
+        width: 30px
     date:
         label: 'shell.offers::lang.application.date'
         type: text
@@ -18,8 +24,8 @@ columns:
         sortable: true
         select: job_title_id
         relation: offer
-    offer:
-        label: 'shell.offers::lang.offer.job-offer'
+    offer:        
+        label: 'shell.offers::lang.offer.id'
         type: text
         searchable: true
         sortable: true

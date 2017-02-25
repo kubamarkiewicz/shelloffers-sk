@@ -1,5 +1,5 @@
 <div data-control="toolbar">
-        <button
+<!--         <button
         class="btn btn-default oc-icon-trash-o"
         disabled="disabled"
         onclick="$(this).data('request-data', {
@@ -13,5 +13,6 @@
         data-request-success="$(this).prop('disabled', true)"
         data-stripe-load-indicator>
         <?= e(trans('backend::lang.list.delete_selected')) ?>
-    </button>
+    </button> -->
+    <a href="<?= Backend::url('shell/offers/applications/export') ?>" class="btn btn-primary oc-icon-file-excel-o"><?= e(trans('shell.offers::lang.export.export_to_excel')) ?></a>
 </div>

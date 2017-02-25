@@ -33,9 +33,12 @@
         'valid-to' => 'Valid to',
         'create-date' => 'Creation date',
         'created-by' => 'Created by',
+        'id' => 'Job offer ID',
     ],
     'application' => [
         'date' => 'Date',
+        'applications' => 'Applications',
+        'id' => 'Application ID',
     ],
     'statistics' => [
         'statistics' => 'Statistics',
@@ -43,5 +46,9 @@
     'user' => [
         'site' => 'Site (required only for Site Managers)',
         'sites' => 'Sites (required only for Retailers)',
-    ],
+    ],    
+    'export' => [
+        'export_to_excel' => 'Export to Excel'
+    ]
+
 ];
