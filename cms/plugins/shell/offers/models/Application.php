@@ -49,4 +49,13 @@ class Application extends Model
         return $data;
     }
 
+    public function getStatusOptions()
+    {
+        return [
+            'no_action' => trans('shell.offers::lang.application.application-status.no_action'),
+            'invited_for_interview' => trans('shell.offers::lang.application.application-status.invited_for_interview'),
+            'rejection_email_sent' => trans('shell.offers::lang.application.application-status.rejection_email_sent')
+        ];
+    }
+
 }

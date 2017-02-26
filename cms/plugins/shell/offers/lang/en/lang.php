@@ -39,6 +39,13 @@
         'date' => 'Date',
         'applications' => 'Applications',
         'id' => 'Application ID',
+        'status' => 'Status',
+        'updated' => 'Application was updated',
+        'application-status' => [
+            'no_action' => 'No action',
+            'invited_for_interview' => 'Invited for interview',
+            'rejection_email_sent' => 'Rejection e-mail sent'
+        ]
     ],
     'statistics' => [
         'statistics' => 'Statistics',

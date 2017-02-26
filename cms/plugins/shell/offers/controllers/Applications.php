@@ -39,6 +39,17 @@ class Applications extends Controller
         }
     }
 
+    public function ajaxUpdateStatus()
+    {
+        // print_r($_POST);
+        $application = Application::find($_POST['application_id']);
+        $application->status = $_POST['status'];
+        $application->save();
+
+        $result = $application->status;
+        return response()->json($result, 200, array(), JSON_PRETTY_PRINT);
+    }
+
     
     function export() 
     {

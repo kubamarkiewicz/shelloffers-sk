@@ -11,7 +11,7 @@ columns:
         searchable: true
         sortable: true
     station:
-        label: 'shell.offers::lang.station.station'
+        label: 'shell.offers::lang.station.id'
         type: text
         searchable: true
         sortable: true
@@ -24,10 +24,14 @@ columns:
         sortable: true
         select: job_title_id
         relation: offer
-    offer:        
-        label: 'shell.offers::lang.offer.id'
-        type: text
+    status:        
+        label: 'shell.offers::lang.application.status'
+        type: partial
+        path: ~/plugins/shell/offers/models/application/_status_column.htm
         searchable: true
         sortable: true
-        select: id
-        relation: offer
+        width: 220px
+    empty:        
+        label: ''
+        searchable: false
+        sortable: false

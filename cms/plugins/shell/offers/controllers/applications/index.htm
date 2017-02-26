@@ -1,1 +1,24 @@
 <?= $this->listRender() ?>
+
+<script>
+	
+	$(document).ready(function(){
+
+		$("select[name='status']").change(function(){
+			var select = $(this);
+			$.post( "<?= Backend::url('shell/offers/applications/ajax-update-status') ?>", 
+			{ 
+				application_id: select.data('application-id'), 
+				status: select.val() 
+			})
+			.done(function( data ) {
+				select.removeAttr('disabled');
+				select.val(data.value);
+				$.oc.flashMsg({ text: '<?=trans('shell.offers::lang.application.updated')?>', class: 'success' });
+			});
+			select.attr('disabled', 'disabled');
+		});
+
+	}); 
+		
+</script>

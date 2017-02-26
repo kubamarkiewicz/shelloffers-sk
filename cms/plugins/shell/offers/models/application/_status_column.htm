@@ -1,0 +1,8 @@
+    
+    <div class="form-group form-group-sm" style="padding-bottom: 0">
+	    <select class="form-control custom-select select-no-search" name="status" data-application-id="<?=$record->id?>">
+	        <?php foreach($record->getStatusOptions() as $key => $label) : ?>
+	        	<option value="<?=$key?>" <?= $value==$key ? 'selected="selected"' : '' ?>><?=$label?></option>
+	        <?php endforeach ?>
+	    </select>
+	</div>
