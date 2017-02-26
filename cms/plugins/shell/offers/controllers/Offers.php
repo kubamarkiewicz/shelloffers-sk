@@ -35,9 +35,6 @@ class Offers extends Controller
 
     public function formExtendFields($form)    
     {
-        if (!$form->getField('created_by')->value) {
-            $form->getField('created_by')->value = $this->user->id;
-        }
         if ($this->user->isManager()) {
             $form->getField('station')->value = $this->user->station_id;
             $form->getField('station')->disabled = 1;
