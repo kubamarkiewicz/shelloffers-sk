@@ -87,8 +87,8 @@ $.oc.langMessages['sk'] = $.extend(
         weekdaysMin : 'ne_po_ut_st_št_pi_so'.split('_'),
         longDateFormat : {
             LT: 'H:mm',
-            LTS : 'H:mm:ss',
-            L : 'DD.MM.YYYY',
+            LTS : 'H:mm:ss',            
+            L : 'YYYY-MM-DD',
             LL : 'D. MMMM YYYY',
             LLL : 'D. MMMM YYYY H:mm',
             LLLL : 'dddd D. MMMM YYYY H:mm'
