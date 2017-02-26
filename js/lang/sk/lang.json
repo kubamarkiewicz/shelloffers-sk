@@ -1,0 +1,36 @@
+{
+	"offers" : {
+		"title" : "VYHĽADÁVAČ PONÚK PRÁCE",
+		"keywords" : "Kľúčové slová",
+		"job-titles-filter" : "Pracovné miesto (všetky)",
+		"provinces-filter" : "Kraj (všetky)",
+		"cities-filter" : "Mesto (všetky)",
+		"search" : "Hľadať",
+		"offers-count" : "Množstvo pracovných ponúk na čerpacích staniciach Shell:",
+		"apply" : "Aplikovať",
+		"more-offers" : "Zobraziť ďalšie ponuky:"
+	},
+
+	"application" : {
+		"title" : "APLIKAČNÝ FORMULÁR",
+		"firstname" : "Meno*",
+		"lastname" : "Priezvisko*",
+		"email" : "E-mailová adresa*",
+		"tel" : "Telefónne číslo*",
+		"province" : "Kraj",
+		"city" : "Mesto",
+		"attachments" : "Priložte životopis alebo iný súbor, ktorý chcete pripojiť k žiadosti:",
+		"message" : "Doplňujúca správa pre zamestnávateľa",
+		"required-fields" : "* povinné polia",
+		"send" : "Odoslať",
+		"field-required" : "Toto pole je povinné",
+		"email-required" : "Zadajte e-mailovú adresu"
+	},
+
+	"application-sent" : {
+		"title" : "APLIKAČNÝ FORMULÁR",
+		"application-sent" : "Vaša aplikácia bola odoslaná. Ďakujeme!",
+		"ok" : "OK"
+	}
+
+}

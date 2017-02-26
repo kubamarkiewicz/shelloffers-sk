@@ -23,6 +23,22 @@ class Applications extends Controller
         BackendMenu::setContext('Shell.Offers', 'main-menu-item', 'side-menu-item4');
     }
 
+    public function listExtendQuery($query)
+    {
+        if ($this->user->isManager()) {
+            $query->join('shell_offers_offers', function($join) {
+                    $join->on('shell_offers_offers.id', '=', 'shell_offers_applications.offer_id');
+                })
+                ->where("shell_offers_offers.station_id", '=', $this->user->station_id);
+        }
+        else if ($this->user->isRetailer()) {
+            $query->join('shell_offers_offers', function($join) {
+                    $join->on('shell_offers_offers.id', '=', 'shell_offers_applications.offer_id');
+                })
+                ->whereIn('shell_offers_offers.station_id', $this->user->getStationsIds());
+        }
+    }
+
     
     function export() 
     {

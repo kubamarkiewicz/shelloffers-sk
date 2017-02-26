@@ -3,7 +3,7 @@ window.config = window.config || {};
 
 window.config.env = "dev"; // dev|prod
 
-window.config.lang = "en";
+window.config.lang = "sk";
 
 window.config.api = {
 

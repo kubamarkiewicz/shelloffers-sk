@@ -14,7 +14,7 @@
         data-stripe-load-indicator>
         <?= e(trans('backend::lang.list.delete_selected')) ?>
     </button> -->
-    <?php if ($this->user->hasAccess('shell.offers.export_applications')) : ?>
+    <?php if ($this->user->hasAccess('export_applications')) : ?>
         <a href="<?= Backend::url('shell/offers/applications/export') ?>" class="btn btn-primary oc-icon-file-excel-o"><?= e(trans('shell.offers::lang.export.export_to_excel')) ?></a>
     <?php endif ?>
 </div>
