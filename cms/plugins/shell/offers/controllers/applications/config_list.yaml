@@ -2,6 +2,7 @@ title: 'shell.offers::lang.statistics.statistics'
 modelClass: Shell\Offers\Models\Application
 list: $/shell/offers/models/application/columns.yaml
 noRecordsMessage: 'backend::lang.list.no_records'
+filter: config_filter.yaml
 toolbar:
     buttons: list_toolbar
     search:

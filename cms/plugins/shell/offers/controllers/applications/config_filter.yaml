@@ -1,0 +1,26 @@
+
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+
+
+    date:
+        label: 'shell.offers::lang.application.date'
+        type: daterange
+        conditions: date >= ':after' AND date <= ':before'
+
+    offer_id:
+        label: 'shell.offers::lang.offer.id'
+        modelClass: Shell\Offers\Models\Offer
+        nameFrom: id
+        conditions: offer_id in (:filtered)
+
+    status:
+        label: 'shell.offers::lang.application.status'
+        type: group
+        conditions: status in (:filtered)
+        modelClass: Shell\Offers\Models\Application
+        options: getStatusOptions
+            

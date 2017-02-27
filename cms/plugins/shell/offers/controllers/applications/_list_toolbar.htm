@@ -18,3 +18,19 @@
         <a href="<?= Backend::url('shell/offers/applications/export') ?>" class="btn btn-primary oc-icon-file-excel-o"><?= e(trans('shell.offers::lang.export.export_to_excel')) ?></a>
     <?php endif ?>
 </div>
+
+<script>
+    $('.control-filter').data('filterScopes', {
+        statuses: {
+            available: [
+                { id: 1, name: 'Deleted' },
+                { id: 2, name: 'Deployed' },
+                { id: 3, name: 'Detailed' }
+            ],
+            active: [
+                { id: 4, name: 'Published' },
+                { id: 5, name: 'Draft' }
+            ]
+        }
+    })
+</script>

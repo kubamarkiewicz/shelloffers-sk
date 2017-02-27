@@ -23,6 +23,7 @@
         'job-titles' => 'Positions',
         'name' => 'Position name',
         'description' => 'Job offer\'s template',
+        'id' => 'Position ID'
     ],
     'offer' => [
         'job-offer' => 'Job offer',
