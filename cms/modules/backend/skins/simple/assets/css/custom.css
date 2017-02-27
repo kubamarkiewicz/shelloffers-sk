@@ -294,3 +294,7 @@ table.table.data thead td, table.table.data thead th{
 	padding: 13px 16px;
 	margin: -10px 10px -10px -15px;
 }
+
+.field-checkboxlist-scrollable .control-scrollbar {
+  overflow: auto;
+}
