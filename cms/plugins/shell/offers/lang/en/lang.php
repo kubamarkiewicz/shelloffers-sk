@@ -37,7 +37,7 @@
         'id' => 'Job offer ID',
     ],
     'application' => [
-        'date' => 'Date',
+        'date' => 'Appliaction sent date',
         'applications' => 'Applications',
         'id' => 'Application ID',
         'status' => 'Status',
