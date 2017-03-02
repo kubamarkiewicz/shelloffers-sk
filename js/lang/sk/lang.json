@@ -7,12 +7,12 @@
 		"cities-filter" : "Mesto (všetky)",
 		"search" : "Hľadať",
 		"offers-count" : "Množstvo pracovných ponúk na čerpacích staniciach Shell:",
-		"apply" : "Aplikovať",
+		"apply" : "Poslať životopis",
 		"more-offers" : "Zobraziť ďalšie ponuky:"
 	},
 
 	"application" : {
-		"title" : "APLIKAČNÝ FORMULÁR",
+		"title" : "ŽIADOSŤ",
 		"firstname" : "Meno*",
 		"lastname" : "Priezvisko*",
 		"email" : "E-mailová adresa*",
@@ -28,8 +28,8 @@
 	},
 
 	"application-sent" : {
-		"title" : "APLIKAČNÝ FORMULÁR",
-		"application-sent" : "Vaša aplikácia bola odoslaná. Ďakujeme!",
+		"title" : "ŽIADOSŤ",
+		"application-sent" : "Vaša žiadosť bola odoslaná. Ďakujeme!",
 		"ok" : "OK"
 	}
 
