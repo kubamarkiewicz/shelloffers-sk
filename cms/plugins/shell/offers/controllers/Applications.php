@@ -63,15 +63,17 @@ class Applications extends Controller
 
         $sheet->setCellValueByColumnAndRow(0, 1, trans('shell.offers::lang.application.id'));
         $sheet->setCellValueByColumnAndRow(1, 1, trans('shell.offers::lang.application.date'));
-        $sheet->setCellValueByColumnAndRow(2, 1, trans('shell.offers::lang.station.station'));
-        $sheet->setCellValueByColumnAndRow(3, 1, trans('shell.offers::lang.job-title.job-title'));
-        $sheet->setCellValueByColumnAndRow(4, 1, trans('shell.offers::lang.offer.id'));
+        $sheet->setCellValueByColumnAndRow(2, 1, trans('shell.offers::lang.offer.id'));
+        $sheet->setCellValueByColumnAndRow(3, 1, trans('shell.offers::lang.station.station'));
+        $sheet->setCellValueByColumnAndRow(4, 1, trans('shell.offers::lang.job-title.job-title'));
+        $sheet->setCellValueByColumnAndRow(5, 1, trans('shell.offers::lang.application.status'));
 
         $sheet->getColumnDimension('A')->setWidth(15);
         $sheet->getColumnDimension('B')->setWidth(20);
-        $sheet->getColumnDimension('C')->setWidth(30);
+        $sheet->getColumnDimension('C')->setWidth(15);
         $sheet->getColumnDimension('D')->setWidth(30);
-        $sheet->getColumnDimension('E')->setWidth(15);
+        $sheet->getColumnDimension('E')->setWidth(30);
+        $sheet->getColumnDimension('F')->setWidth(50);
 
         $sheet->getStyle('A')->getAlignment()->setHorizontal('left');
         $sheet->getStyle('E')->getAlignment()->setHorizontal('left');
@@ -79,9 +81,10 @@ class Applications extends Controller
         if ($data) foreach ($data as $key => $item) {
             $sheet->setCellValueByColumnAndRow(0, $key+2, $item->id);
             $sheet->setCellValueByColumnAndRow(1, $key+2, $item->date);
-            $sheet->setCellValueByColumnAndRow(2, $key+2, $item->station);
-            $sheet->setCellValueByColumnAndRow(3, $key+2, $item->job_title);
-            $sheet->setCellValueByColumnAndRow(4, $key+2, $item->offer_id);
+            $sheet->setCellValueByColumnAndRow(2, $key+2, $item->offer_id);
+            $sheet->setCellValueByColumnAndRow(3, $key+2, $item->station);
+            $sheet->setCellValueByColumnAndRow(4, $key+2, $item->job_title);
+            $sheet->setCellValueByColumnAndRow(5, $key+2, trans('shell.offers::lang.application.application-status.'.$item->status));
         }
         
         // Rename worksheet
