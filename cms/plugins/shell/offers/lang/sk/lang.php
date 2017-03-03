@@ -36,10 +36,25 @@
     ],
     'application' => [
         'date' => 'Dátum',
-        'statistics' => '',
+        'applications' => 'Applications',
+        'id' => 'Application ID',
+        'status' => 'Status',
+        'updated' => 'Application was updated',
+        'application-status' => [
+            'no_action' => 'No action',
+            'invited_for_interview' => 'Invited for interview',
+            'rejection_email_sent' => 'Rejection e-mail sent'
+        ]
+    ],
+    'statistics' => [
         'statistics' => 'Štatistické údaje',
-        'user' => '',
+    ],
+    'user' => [
         'site' => 'Čerpacie stanice (len pre Manažérov čerpacích staníc)',
+        'sites' => 'Sites (required only for Retailers)',
+    ],    
+    'export' => [
+        'export_to_excel' => 'Export to Excel'
     ]
 
 ];
