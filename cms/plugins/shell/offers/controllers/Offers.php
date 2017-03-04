@@ -53,6 +53,12 @@ class Offers extends Controller
         else if ($this->user->isRetailer()) {
             $query->whereIn('station_id', $this->user->getStationsIds());
         }
+
+        // join provinces
+        // $query->leftJoin('shell_offers_stations AS s','s.id','=','shell_offers_offers.station_id');
+        // $query->leftJoin('shell_offers_provinces AS p','p.id','=','s.province_id');
+        // $query->select("p.name AS province");
+        // $query->getQuery()->orders = null;
     }
    
 
