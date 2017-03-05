@@ -101,7 +101,9 @@ class Users extends Controller
         /*
          * Add permissions tab
          */
-        $form->addTabFields($this->generatePermissionsField());
+        if ($this->user->isSuperUser()) {
+            $form->addTabFields($this->generatePermissionsField());
+        }
 
         /*
          * Mark default groups
