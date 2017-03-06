@@ -1,6 +1,6 @@
 <?php return [
     'plugin' => [
-        'name' => 'Ponuky práce Shell',
+        'name' => 'Ponuky práce na čerpacích staniciach Shell',
         'description' => 'Ponuky práce na čerpacích staniciach Shell',
     ],
     'station' => [

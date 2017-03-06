@@ -170,9 +170,7 @@ class Manager
             if (!$user->checkHashValue($credential, $value)) {
                 // Incorrect password
                 if ($credential == 'password') {
-                    throw new AuthException(sprintf(
-                        'A user was found to match all plain text credentials however hashed credential "%s" did not match.', $credential
-                    ));
+                    throw new AuthException(sprintf(trans('shell.offers::auth.incorrect_password')));
                 }
 
                 // User not found

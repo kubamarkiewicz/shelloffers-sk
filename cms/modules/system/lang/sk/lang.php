@@ -85,5 +85,11 @@ return [
         'deleting_layout' => 'Odoberanie rozvrhnutia …',
         'sending' => 'Odoslať skúšobnú správu ...',
         'return' => 'Späť na zoznam šablón',
+    ],
+    'system' => [
+        'categories' => [
+            'mail' => 'Mail',
+            'system' => 'System',
+        ]
     ]
 ];
