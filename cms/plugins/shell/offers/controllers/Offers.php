@@ -73,6 +73,9 @@ class Offers extends Controller
         $excel->setActiveSheetIndex(0);
         $sheet = $excel->getActiveSheet();
 
+        // center align all columns
+        $sheet->getDefaultStyle()->getAlignment()->setHorizontal('center');
+
         $sheet->setCellValueByColumnAndRow(0, 1, trans('shell.offers::lang.offer.id'));
         $sheet->setCellValueByColumnAndRow(1, 1, trans('shell.offers::lang.station.station'));
         $sheet->setCellValueByColumnAndRow(2, 1, trans('shell.offers::lang.job-title.job-title'));
@@ -90,9 +93,9 @@ class Offers extends Controller
         $sheet->getColumnDimension('F')->setWidth(15);
         $sheet->getColumnDimension('G')->setWidth(15);
         $sheet->getColumnDimension('H')->setWidth(15);
-
-        $sheet->getStyle('A')->getAlignment()->setHorizontal('left');
-        $sheet->getStyle('H')->getAlignment()->setHorizontal('left');
+        
+        $sheet->getStyle('A1:H1')->getFont()->setBold(true);
+        $sheet->getStyle('A1:H1')->getBorders()->getBottom()->setBorderStyle('thick');
 
         if ($data) foreach ($data as $key => $item) {
             $sheet->setCellValueByColumnAndRow(0, $key+2, $item->id);

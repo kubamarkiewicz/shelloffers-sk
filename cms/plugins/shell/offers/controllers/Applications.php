@@ -61,6 +61,9 @@ class Applications extends Controller
         $excel->setActiveSheetIndex(0);
         $sheet = $excel->getActiveSheet();
 
+        // center align all columns
+        $sheet->getDefaultStyle()->getAlignment()->setHorizontal('center');
+
         $sheet->setCellValueByColumnAndRow(0, 1, trans('shell.offers::lang.application.id'));
         $sheet->setCellValueByColumnAndRow(1, 1, trans('shell.offers::lang.application.date'));
         $sheet->setCellValueByColumnAndRow(2, 1, trans('shell.offers::lang.offer.id'));
@@ -73,10 +76,10 @@ class Applications extends Controller
         $sheet->getColumnDimension('C')->setWidth(15);
         $sheet->getColumnDimension('D')->setWidth(30);
         $sheet->getColumnDimension('E')->setWidth(30);
-        $sheet->getColumnDimension('F')->setWidth(50);
-
-        $sheet->getStyle('A')->getAlignment()->setHorizontal('left');
-        $sheet->getStyle('E')->getAlignment()->setHorizontal('left');
+        $sheet->getColumnDimension('F')->setWidth(30);
+        
+        $sheet->getStyle('A1:F1')->getFont()->setBold(true);
+        $sheet->getStyle('A1:F1')->getBorders()->getBottom()->setBorderStyle('thick');
 
         if ($data) foreach ($data as $key => $item) {
             $sheet->setCellValueByColumnAndRow(0, $key+2, $item->id);
@@ -84,7 +87,7 @@ class Applications extends Controller
             $sheet->setCellValueByColumnAndRow(2, $key+2, $item->offer_id);
             $sheet->setCellValueByColumnAndRow(3, $key+2, $item->station);
             $sheet->setCellValueByColumnAndRow(4, $key+2, $item->job_title);
-            $sheet->setCellValueByColumnAndRow(5, $key+2, trans('shell.offers::lang.application.application-status.'.$item->status));
+            $sheet->setCellValueByColumnAndRow(5, $key+2, trans('shell.offers::lang.application.application-status.'.($item->status ? $item->status : 'no_action')));
         }
         
         // Rename worksheet
