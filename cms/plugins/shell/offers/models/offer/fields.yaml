@@ -57,6 +57,7 @@ fields:
         context:
             - update
             - preview
+            - create
     created_by:
         label: 'shell.offers::lang.offer.created-by'
         oc.commentPosition: ''
@@ -68,3 +69,4 @@ fields:
         context:
             - update
             - preview
+            - create
