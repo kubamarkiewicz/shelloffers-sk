@@ -392,10 +392,6 @@
         'formatUL',
         'insertTable',
         'insertLink',
-        'insertImage',
-        'insertVideo',
-        'insertAudio',
-        'insertFile',
         'insertHR',
         'fullscreen',
         'html'
