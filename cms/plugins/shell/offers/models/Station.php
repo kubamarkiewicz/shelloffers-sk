@@ -10,10 +10,14 @@ class Station extends Model
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\SoftDelete;
 
-    /*
-     * Validation
+
+
+    /**
+     * Validation rules
      */
     public $rules = [
+        'id' => 'required|unique:shell_offers_stations',
+        'email' => 'required|email'
     ];
 
     /*
