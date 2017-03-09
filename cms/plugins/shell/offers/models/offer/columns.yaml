@@ -1,7 +1,7 @@
 columns:
     id:
         label: 'shell.offers::lang.offer.id'
-        type: text
+        type: number
         searchable: true
         sortable: true
         width: 30px

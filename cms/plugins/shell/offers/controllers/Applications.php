@@ -5,7 +5,7 @@ use BackendMenu;
 use PHPExcel;
 use PHPExcel_IOFactory;
 use Shell\Offers\Models\Application as Application;
-
+use DB;
 
 class Applications extends Controller
 {
@@ -25,6 +25,10 @@ class Applications extends Controller
 
     public function listExtendQuery($query)
     {
+        $query->leftJoin('shell_offers_offers', 'shell_offers_applications.offer_id', '=', 'shell_offers_offers.id');
+        $query->leftJoin('shell_offers_stations', 'shell_offers_offers.station_id', '=', 'shell_offers_stations.id');
+        $query->leftJoin('shell_offers_job_titles', 'shell_offers_offers.job_title_id', '=', 'shell_offers_job_titles.id');
+
         if ($this->user->isManager()) {
             $query->join('shell_offers_offers', function($join) {
                     $join->on('shell_offers_offers.id', '=', 'shell_offers_applications.offer_id');
