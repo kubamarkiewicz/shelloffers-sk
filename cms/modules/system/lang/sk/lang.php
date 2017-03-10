@@ -5,7 +5,7 @@ return [
         'menu_label' => 'Nastavenie',
         'not_found' => 'Nie je možné nájsť zadané nastavenia',
         'missing_model' => 'Na stránke nastavenia chýba definícia modelu',
-        'update_success' => 'Nastavenie pre: name boli úspešne aktualizované',
+        'update_success' => 'Nastavenie pre :name boli úspešne aktualizované',
         'return' => 'Prejdite späť na nastavenia systému',
         'search' => 'Hľadať'
     ],
@@ -74,7 +74,7 @@ return [
         'content_text' => 'Plaintext',
         'test_send' => 'Odoslať skúšobnú správu',
         'test_success' => 'Skúšobná správa bola úspešne odoslaná.',
-        'test_confirm' => 'Odoslať skúšobnú správu na :e-mail. Pokračovať?',
+        'test_confirm' => 'Odoslať skúšobnú správu na :email. Pokračovať?',
         'creating' => 'Tvorenie šablóny …',
         'creating_layout' => 'Tvorenie rozvrhnutia …',
         'saving' => 'Ukladanie šablóny …',
