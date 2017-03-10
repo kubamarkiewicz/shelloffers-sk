@@ -17,31 +17,30 @@ class Applications extends Controller
         'see_statistics' 
     ];
 
+
     public function __construct()
     {
         parent::__construct();
         BackendMenu::setContext('Shell.Offers', 'main-menu-item', 'side-menu-item4');
     }
 
+
     public function listExtendQuery($query)
     {
+        // join offers, stations, job titles
         $query->leftJoin('shell_offers_offers', 'shell_offers_applications.offer_id', '=', 'shell_offers_offers.id');
         $query->leftJoin('shell_offers_stations', 'shell_offers_offers.station_id', '=', 'shell_offers_stations.id');
         $query->leftJoin('shell_offers_job_titles', 'shell_offers_offers.job_title_id', '=', 'shell_offers_job_titles.id');
 
+        // filter by stations assigned to current user
         if ($this->user->isManager()) {
-            $query->join('shell_offers_offers', function($join) {
-                    $join->on('shell_offers_offers.id', '=', 'shell_offers_applications.offer_id');
-                })
-                ->where("shell_offers_offers.station_id", '=', $this->user->station_id);
+            $query->where("shell_offers_offers.station_id", '=', $this->user->station_id);
         }
         else if ($this->user->isRetailer()) {
-            $query->join('shell_offers_offers', function($join) {
-                    $join->on('shell_offers_offers.id', '=', 'shell_offers_applications.offer_id');
-                })
-                ->whereIn('shell_offers_offers.station_id', $this->user->getStationsIds());
+            $query->whereIn('shell_offers_offers.station_id', $this->user->getStationsIds());
         }
     }
+
 
     public function ajaxUpdateStatus()
     {

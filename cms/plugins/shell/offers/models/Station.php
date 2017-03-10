@@ -1,6 +1,8 @@
 <?php namespace Shell\Offers\Models;
 
 use Model;
+use Db;
+use BackendAuth;
 
 /**
  * Model
@@ -46,6 +48,41 @@ class Station extends Model
     public function getFullNameAttribute()
     {
         return $this->id . " " . $this->name;
+    }
+
+    /**
+     * Scope a query to only include stations assigned to current user
+     */
+    public function scopeAssigned($query)
+    {
+        // todo: scopes not working
+        $user = BackendAuth::getUser();
+
+        if ($this->user->isManager()) {
+            $query->where('id', '=', $this->user->station_id);
+        }
+        else if ($this->user->isRetailer()) {
+            $query->whereIn('id', $this->user->getStationsIds());
+        }
+        return $query;
+    }
+
+
+
+    public function getCities()
+    {
+        $query = Db::table($this->table);
+
+        // filter by stations assigend to current user
+        $user = BackendAuth::getUser();
+        if ($user->isManager()) {
+            $query->where('id', '=', $user->station_id);
+        }
+        else if ($user->isRetailer()) {
+            $query->whereIn('id', $user->getStationsIds());
+        }
+
+        return $query->lists('city');
     }
 
     

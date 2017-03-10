@@ -60,6 +60,17 @@ class Offer extends Model
         }
     } 
 
+
+    public function getStatusOptions()
+    {
+        return [
+            'no_action' => trans('shell.offers::lang.application.application-status.no_action'),
+            'invited_for_interview' => trans('shell.offers::lang.application.application-status.invited_for_interview'),
+            'rejection_email_sent' => trans('shell.offers::lang.application.application-status.rejection_email_sent')
+        ];
+    }
+
+
     public function getStationOptions()
     {
         $query = Station::select('id', 'name');
@@ -77,6 +88,15 @@ class Offer extends Model
             $options[$key] = $key.' '.$value;
         }
         return $options;
+    }
+
+
+    public function getPublishedOptions()
+    {
+        return [
+            0 => trans('backend::lang.list.column_switch_false'),
+            1 => trans('backend::lang.list.column_switch_true')
+        ];
     }
 
 

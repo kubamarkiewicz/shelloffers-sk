@@ -47,6 +47,12 @@ class Offers extends Controller
 
     public function listExtendQuery($query)
     {
+
+        // join provinces
+        $query->leftJoin('shell_offers_stations', 'shell_offers_offers.station_id', '=', 'shell_offers_stations.id');
+        
+        
+        // filter offers by stations assigned to current user
         if ($this->user->isManager()) {
             $query->where('station_id', '=', $this->user->station_id);
         }
@@ -54,11 +60,7 @@ class Offers extends Controller
             $query->whereIn('station_id', $this->user->getStationsIds());
         }
 
-        // join provinces
-        // $query->leftJoin('shell_offers_stations AS s','s.id','=','shell_offers_offers.station_id');
-        // $query->leftJoin('shell_offers_provinces AS p','p.id','=','s.province_id');
-        // $query->select("p.name AS province");
-        // $query->getQuery()->orders = null;
+        // dump($query); exit;
     }
    
 
