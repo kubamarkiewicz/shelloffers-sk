@@ -1,0 +1,45 @@
+
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+
+
+    id:
+        label: 'shell.offers::lang.application.id'
+        modelClass: Shell\Offers\Models\Application
+        nameFrom: id
+        conditions: shell_offers_applications.id in (:filtered)
+
+    date:
+        label: 'shell.offers::lang.application.date'
+        type: daterange
+        conditions: date >= ':after' AND date <= ':before'
+
+    offer_id:
+        label: 'shell.offers::lang.offer.id'
+        modelClass: Shell\Offers\Models\Offer
+        nameFrom: id
+        conditions: offer_id in (:filtered)
+
+    station:
+        label: 'shell.offers::lang.station.station'
+        modelClass: Shell\Offers\Models\Station
+        nameFrom: full_name
+        conditions: shell_offers_offers.station_id in (:filtered)
+        scope: assigned
+
+    job_title:
+        label: 'shell.offers::lang.job-title.job-title'
+        modelClass: Shell\Offers\Models\JobTitle
+        nameFrom: name
+        conditions: shell_offers_offers.job_title_id in (:filtered)
+
+    status:
+        label: 'shell.offers::lang.application.status'
+        type: group
+        conditions: status in (:filtered)
+        modelClass: Shell\Offers\Models\Application
+        options: getStatusOptions
+            

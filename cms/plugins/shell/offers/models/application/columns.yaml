@@ -1,7 +1,18 @@
-columns:
+columns:    
+    application_id:
+        label: 'shell.offers::lang.application.id'
+        type: number
+        searchable: true
+        sortable: true
+        select: shell_offers_applications.id
     date:
         label: 'shell.offers::lang.application.date'
         type: text
+        searchable: true
+        sortable: true
+    offer_id:
+        label: 'shell.offers::lang.offer.id'
+        type: number
         searchable: true
         sortable: true
     station:
@@ -9,19 +20,21 @@ columns:
         type: text
         searchable: true
         sortable: true
-        select: station_id
-        relation: offer
+        select: concat(shell_offers_stations.id, ' ', shell_offers_stations.name)
     job_title:
         label: 'shell.offers::lang.job-title.job-title'
         type: text
         searchable: true
         sortable: true
-        select: job_title_id
-        relation: offer
-    offer:
-        label: 'shell.offers::lang.offer.job-offer'
-        type: text
+        select: shell_offers_job_titles.name
+    status:        
+        label: 'shell.offers::lang.application.status'
+        type: partial
+        path: ~/plugins/shell/offers/models/application/_status_column.htm
         searchable: true
         sortable: true
-        select: id
-        relation: offer
+        width: 220px
+    empty:        
+        label: ''
+        searchable: false
+        sortable: false

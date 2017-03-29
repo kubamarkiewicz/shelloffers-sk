@@ -1,6 +1,7 @@
 <?php namespace Shell\Offers\Models;
 
 use Model;
+use DB;
 
 /**
  * Model
@@ -33,4 +34,28 @@ class Application extends Model
     public $belongsTo = [
         'offer' => ['Shell\Offers\Models\Offer']
     ];
+    
+    public function getForExport()
+    {
+        $sql = "SELECT a.*, CONCAT(s.id, ' ', s.name) AS station, t.name AS job_title
+                FROM $this->table AS a
+                LEFT JOIN shell_offers_offers AS o ON a.offer_id = o.id
+                LEFT JOIN shell_offers_stations AS s ON o.station_id = s.id
+                LEFT JOIN shell_offers_job_titles AS t ON o.job_title_id = t.id
+                ORDER BY a.date DESC";
+        // echo $sql;
+        $data = DB::select(DB::raw($sql));
+        // dump($data); exit;
+        return $data;
+    }
+
+    public function getStatusOptions()
+    {
+        return [
+            'no_action' => trans('shell.offers::lang.application.application-status.no_action'),
+            'invited_for_interview' => trans('shell.offers::lang.application.application-status.invited_for_interview'),
+            'rejection_email_sent' => trans('shell.offers::lang.application.application-status.rejection_email_sent')
+        ];
+    }
+
 }

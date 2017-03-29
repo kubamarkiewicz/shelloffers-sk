@@ -6,7 +6,7 @@
 <meta name="backend-timezone" content="<?= e(Backend\Models\Preference::get('timezone')) ?>">
 <meta name="backend-locale" content="<?= e(Backend\Models\Preference::get('locale')) ?>">
 <meta name="csrf-token" content="<?= csrf_token() ?>">
-<link rel="icon" type="image/png" href="<?= Backend::skinAsset('assets/favicon.ico') ?>">
+<link rel="icon" type="image/png" href="<?= Backend::skinAsset('assets/images/icon-72x72.png') ?>">
 <title data-title-template="<?= empty($this->pageTitleTemplate) ? '%s' : e($this->pageTitleTemplate) ?> | <?= e(Backend\Models\BrandSetting::get('app_name')) ?>">
     <?= e(trans($this->pageTitle)) ?> | <?= e(Backend\Models\BrandSetting::get('app_name')) ?>
 </title>
@@ -16,6 +16,9 @@
 <link href="<?= Backend::skinAsset('assets/css/october.css') ?>" rel="stylesheet">
 
 <link href="<?= Backend::skinAsset('assets/css/custom.css') ?>" rel="stylesheet">
+<link href="<?= Backend::skinAsset('assets/vendor/jquery-ui/jquery-ui.min.css') ?>" rel="stylesheet">
+<link href="<?= Backend::skinAsset('assets/vendor/jquery-ui/jquery-ui.theme.css') ?>" rel="stylesheet">
+
 <script src="<?= Backend::skinAsset('assets/js/vendor/jquery.min.js') ?>?v<?= $coreBuild ?>"></script>
 <script src="<?= Backend::skinAsset('assets/js/framework.js') ?>?v<?= $coreBuild ?>"></script>
 <script src="<?= Backend::skinAsset('assets/storm-min.js') ?>?v<?= $coreBuild ?>"></script>
@@ -25,6 +28,19 @@
 
 <script src="<?= Backend::skinAsset('assets/js/october.flyout.js') ?>"></script>
 <script src="<?= Backend::skinAsset('assets/js/october.tabformexpandcontrols.js') ?>"></script>
+
+<!-- datepicker -->
+<script src="<?= Backend::skinAsset('assets/vendor/jquery-ui/jquery-ui.min.js') ?>"></script>  
+<script src="<?= Backend::skinAsset('assets/vendor/jquery-ui/i18n/datepicker-'.App::getLocale().'.js') ?>"></script>
+<script>
+    $( function() {
+    	$.datepicker.setDefaults($.datepicker.regional['<?=App::getLocale()?>']);
+        $("input.datepicker").datepicker({
+        	dateFormat : "yy-mm-dd",
+        	firstDay: 1
+        });
+    } );
+</script> 
 
 <?= $this->makeAssets() ?>
 <?= Block::placeholder('head') ?>

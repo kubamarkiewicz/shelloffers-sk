@@ -1,0 +1,48 @@
+
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+
+
+    id:
+        label: 'shell.offers::lang.offer.id'
+        modelClass: Shell\Offers\Models\Offer
+        nameFrom: id
+        conditions: id in (:filtered)
+
+    station:
+        label: 'shell.offers::lang.station.station'
+        modelClass: Shell\Offers\Models\Station
+        nameFrom: full_name
+        conditions: station_id in (:filtered)
+
+    job_title:
+        label: 'shell.offers::lang.job-title.job-title'
+        modelClass: Shell\Offers\Models\JobTitle
+        nameFrom: name
+        conditions: job_title_id in (:filtered)
+
+    province:
+        label: 'shell.offers::lang.province.province'
+        modelClass: Shell\Offers\Models\Province
+        nameFrom: name
+        conditions: shell_offers_stations.province_id in (:filtered)
+
+    activated_from:
+        label: 'shell.offers::lang.offer.valid-from'
+        type: daterange
+        conditions: activated_from >= ':after' AND activated_from <= ':before'
+
+    activated_to:
+        label: 'shell.offers::lang.offer.valid-to'
+        type: daterange
+        conditions: activated_to >= ':after' AND activated_to <= ':before'
+
+    published:
+        label: 'shell.offers::lang.offer.published'
+        type: group
+        conditions: published in (:filtered)
+        modelClass: Shell\Offers\Models\Offer
+        options: getPublishedOptions

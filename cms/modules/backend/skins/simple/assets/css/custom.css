@@ -84,7 +84,7 @@ nav#layout-mainmenu ul.mainmenu-toolbar li.mainmenu-account img.account-avatar{
   color: #777;
 }
 .btn.btn-primary:hover {
-  background-color: #3d8eb9;
+  background-color: #bf181c;
 }
 .btn.btn-success {
   background-color: #1abc9c;
@@ -293,4 +293,8 @@ table.table.data thead td, table.table.data thead th{
 	float: left;
 	padding: 13px 16px;
 	margin: -10px 10px -10px -15px;
+}
+
+.field-checkboxlist-scrollable .control-scrollbar {
+  overflow: auto;
 }

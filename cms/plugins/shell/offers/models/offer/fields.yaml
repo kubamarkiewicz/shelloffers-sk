@@ -1,15 +1,15 @@
 fields:
-    station:
-        label: 'shell.offers::lang.station.station'
-        oc.commentPosition: ''
-        nameFrom: full_name
-        descriptionFrom: description
+    id:
+        label: 'shell.offers::lang.offer.id'
         span: left
-        required: 1
-        type: relation
+        disabled: 1
+        context:
+            - update
+            - preview
+        type: text
     published:
         label: 'shell.offers::lang.offer.published'
-        span: auto
+        span: right
         default: 1
         type: switch
     job_title:
@@ -17,11 +17,26 @@ fields:
         oc.commentPosition: ''
         nameFrom: name
         descriptionFrom: offer_template
-        span: auto
+        span: left
         required: 1
         type: relation
+        emptyOption: ' '
     activated_from:
         label: 'shell.offers::lang.offer.valid-from'
+        oc.commentPosition: ''
+        mode: date
+        span: right
+        type: datepicker
+    station:
+        label: 'shell.offers::lang.station.station'
+        oc.commentPosition: ''
+        nameFrom: full_name
+        descriptionFrom: description
+        span: left
+        type: dropdown
+        placeholder: ' '
+    activated_to:
+        label: 'shell.offers::lang.offer.valid-to'
         oc.commentPosition: ''
         mode: date
         span: right
@@ -32,18 +47,17 @@ fields:
         oc.commentPosition: ''
         span: left
         type: richeditor
-    activated_to:
-        label: 'shell.offers::lang.offer.valid-to'
-        oc.commentPosition: ''
-        mode: date
-        span: auto
-        type: datepicker
+        required: 1
     created_at:
         label: 'shell.offers::lang.offer.create-date'
         oc.commentPosition: ''
         span: right
         disabled: 1
         type: text
+        context:
+            - update
+            - preview
+            - create
     created_by:
         label: 'shell.offers::lang.offer.created-by'
         oc.commentPosition: ''
@@ -51,3 +65,8 @@ fields:
         descriptionFrom: description
         span: right
         type: relation
+        disabled: 1
+        context:
+            - update
+            - preview
+            - create
