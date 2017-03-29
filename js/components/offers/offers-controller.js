@@ -58,11 +58,10 @@ app.controller('OffersController', function($scope, $rootScope, $http, config) {
     $scope.loadOffersData = function(resetPage)
     {
         if (resetPage !== undefined && resetPage == true) {
-            $scope.offersData = [];
             $scope.page = 1;
             $scope.showMoreButton = false;
         }
-
+        
         $http({
             method  : 'GET',
             url     : config.api.urls.getOffers,
@@ -75,6 +74,9 @@ app.controller('OffersController', function($scope, $rootScope, $http, config) {
             }
          })
         .success(function(data) {
+            if (resetPage !== undefined && resetPage == true) {
+                $scope.offersData = [];
+            }
             $scope.offersData = $scope.offersData.concat(data.offers);
             $scope.offersCount = data.totalCount;
             $scope.pageSize =  data.pageSize;
@@ -91,15 +93,15 @@ app.controller('OffersController', function($scope, $rootScope, $http, config) {
     $scope.onOfferHeaderClick = function(event)
     {
         var article = $(event.target).closest('article');
+
+        // check if clicked h3 or p
+        if (article.hasClass('expanded') && $(event.target).is('h3')) {
+            return false;
+        }
+
         $('section.offers-list article').not(article).removeClass('expanded');
         article.toggleClass('expanded');
 
-        // scroll to article header
-/*        
-        $('html, body').stop().animate({
-            'scrollTop': article.offset().top
-        }, 300, 'swing');
-*/
         $('html, body').scrollTop(article.offset().top);
     }
 
@@ -108,7 +110,7 @@ app.controller('OffersController', function($scope, $rootScope, $http, config) {
     $http({
         method  : 'GET',
         url     : config.api.urls.getOffers
-    })
+     })
     .success(function(data) {
         $scope.offersCount = data.totalCount;
     });

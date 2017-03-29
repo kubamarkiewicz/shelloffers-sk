@@ -8,11 +8,11 @@ window.config.lang = "en";
 window.config.api = {
 
 	"urls" : {
-		"getOffers"			: "cms/api-v2/offers",
-		"getJobTitles"		: "cms/api-v2/job-titles",
-		"getProvinces"		: "cms/api-v2/provinces",
-		"getCities"			: "cms/api-v2/cities",
-		"postApplication"	: "cms/api-v2/applications"
+		"getOffers"			: "https://shelloffers.pl/pl/dev/form/cms/api-v2/offers",
+		"getJobTitles"		: "https://shelloffers.pl/pl/dev/form/cms/api-v2/job-titles",
+		"getProvinces"		: "https://shelloffers.pl/pl/dev/form/cms/api-v2/provinces",
+		"getCities"			: "https://shelloffers.pl/pl/dev/form/cms/api-v2/cities",
+		"postApplication"	: "https://shelloffers.pl/pl/dev/form/cms/api-v2/applications"
 	}
 
 }

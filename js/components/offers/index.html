@@ -57,8 +57,9 @@
 				
 				<article ng-repeat="item in offersData">
 					
-					<header ng-click="onOfferHeaderClick($event)">
-						<h3>{{ item.job_title }} - {{ item.city }}</h3>
+					<header>
+						<div class="icon" ng-click="onOfferHeaderClick($event)"></div>
+						<h3><a href="" ng-click="onOfferHeaderClick($event)">{{ item.job_title }} - {{ item.city }}</a></h3>
 						<p class="summary">{{ item.street }}</p>
 					</header>
 					

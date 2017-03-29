@@ -22,23 +22,6 @@ app.service('shellAnalyticsService', function ($rootScope) {
 				document.body.dispatchEvent(event);
 			}
 		}
-		        
-
-		var digitalData = {event: []};
-
-		digitalData.event.push({
-			eventInfo: {
-				eventName: 'Event71',
-				type: 'click'
-			}
-		});
-
-		digitalData.event.push({
-			eventInfo: {
-				eventName: 'Event72',
-				type: 'click'
-			}
-		});
 
 		sendCustomEvent('Event71');
 		sendCustomEvent('Event72');
