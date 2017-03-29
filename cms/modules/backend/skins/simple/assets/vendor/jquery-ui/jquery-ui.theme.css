@@ -30,6 +30,7 @@
 }
 .ui-widget.ui-widget-content {
 	border: 1px solid #fff;
+	box-shadow: 0px 4px 5px rgba(0,0,0,0.25);
 }
 .ui-widget-content {
 	border: 1px solid #eee;
@@ -40,10 +41,11 @@
 	color: #333333;
 }
 .ui-widget-header {
-	border: 1px solid #fbce07;
-	background: #fbce07;
+	border: none;
+	background: transparent;
 	color: #000;
-	font-weight: bold;
+	font-weight: normal;
+	text-transform: uppercase;
 }
 .ui-widget-header a {
 	color: #000;
@@ -61,9 +63,15 @@ works properly when clicked or hovered */
 html .ui-button.ui-state-disabled:hover,
 html .ui-button.ui-state-disabled:active {
 	border: 1px solid #fff;
-	background: #f6f6f6;
+	background: transparent;
 	font-weight: normal;
-	color: #000;
+	color: #555;
+	text-align: center;
+	border-radius: 50%;
+	width: 2em;
+	height: 2em;
+	margin-left: auto;
+	margin-right: auto;;;
 }
 .ui-state-default a,
 .ui-state-default a:link,
@@ -83,10 +91,11 @@ a:visited.ui-button,
 .ui-widget-header .ui-state-focus,
 .ui-button:hover,
 .ui-button:focus {
-	border: 1px solid #dd1d21;
-	background: #dd1d21;
+	border-color: rgba(0,0,0,0);
+	background: transparent;
 	font-weight: normal;
 	color: #fff;
+	opacity: 1;
 }
 .ui-state-hover a,
 .ui-state-hover a:hover,
@@ -109,12 +118,16 @@ a.ui-button:focus {
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active,
 a.ui-button:active,
-.ui-button:active,
-.ui-button.ui-state-active:hover {
-	border: 1px solid #dd1d21;
+.ui-button:active {
 	background: #dd1d21;
 	font-weight: normal;
 	color: #fff;
+	border: 1px solid #dd1d21;
+}
+.ui-widget-content .ui-state-default:hover {
+	background: #eeeeee;
+	color: #555;
+	border: 1px solid #eeeeee;
 }
 .ui-icon-background,
 .ui-state-active .ui-icon-background {
@@ -198,14 +211,15 @@ a.ui-button:active,
 .ui-widget-content .ui-icon {
 	background-image: url("images/ui-icons_222222_256x240.png");
 }
-.ui-widget-header .ui-icon {
-	background-image: url("images/ui-icons_000_256x240.png");
+.ui-widget-content .ui-icon.ui-icon-circle-triangle-w {
 }
+
 .ui-state-hover .ui-icon,
 .ui-state-focus .ui-icon,
 .ui-button:hover .ui-icon,
 .ui-button:focus .ui-icon {
-	background-image: url("images/ui-icons_fff_256x240.png");
+	/*background-image: url("images/ui-icons_fff_256x240.png");*/
+	opacity: 1;
 }
 .ui-state-active .ui-icon,
 .ui-button:active .ui-icon {
@@ -440,4 +454,8 @@ a.ui-button:active,
 .ui-widget-shadow {
 	-webkit-box-shadow: -5px -5px 5px #000000;
 	box-shadow: -5px -5px 5px #000000;
+}
+
+.ui-datepicker th {
+	text-transform: uppercase;
 }
