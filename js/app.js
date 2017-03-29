@@ -15,6 +15,7 @@ app.config(['$translateProvider', 'config', function ($translateProvider, config
         suffix: '/lang.json'
     });
     $translateProvider.preferredLanguage(config.lang);
+    $translateProvider.useSanitizeValueStrategy(null);
 
 }]);
 

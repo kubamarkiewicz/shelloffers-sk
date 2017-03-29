@@ -2,9 +2,9 @@
 	"offers" : {
 		"title" : "WYSZUKIWARKA OFERT PRACY",
 		"keywords" : "Słowa kluczowe",
-		"job-titles-filter" : "Stanowisko (wszystkie)..",
-		"provinces-filter" : "Województwo (wszystkie)..",
-		"cities-filter" : "Miasto (wszystkie)..",
+		"job-titles-filter" : "Stanowisko (wszystkie)",
+		"provinces-filter" : "Województwo (wszystkie)",
+		"cities-filter" : "Miasto (wszystkie)",
 		"search" : "Szukaj",
 		"offers-count" : "Liczba ofert pracy na stacjach Shell:",
 		"apply" : "Aplikuj",
@@ -24,7 +24,11 @@
 		"required-fields" : "* - wymagane pola",
 		"send" : "Wyślij",
 		"field-required" : "To pole jest wymagane",
-		"email-required" : "Podaj adres e-mail"
+		"email-required" : "Podaj adres e-mail",
+		"tel-required" : "Podaj numer telefonu",
+		"filesize-limit" : "Rozmiar pliku nie może przekraczać",
+		"file-extension" : "Załączone pliki mogą być tylko w formatach .doc, .docx, .rtf, .pdf",
+		"maxlenght" : "Wpisz nie więcej niż {0} znaków."
 	},
 
 	"application-sent" : {
