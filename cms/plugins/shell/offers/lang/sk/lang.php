@@ -23,6 +23,7 @@
         'job-titles' => 'Pracovné miesta',
         'name' => 'Názov pracovného miesta',
         'description' => 'Šablóna pracovnej ponuky',
+        'id' => 'Číslo pracovného miesta'
     ],
     'offer' => [
         'job-offer' => 'Ponuka práce',
@@ -33,17 +34,18 @@
         'valid-to' => 'Platná do',
         'create-date' => 'Dátum vytvorenia',
         'created-by' => 'Vytvorená:',
+        'id' => 'Číslo ponuky',
     ],
     'application' => [
-        'date' => 'Dátum',
-        'applications' => 'Applications',
-        'id' => 'Application ID',
-        'status' => 'Status',
-        'updated' => 'Application was updated',
+        'date' => 'Dátum odoslania žiadosti',
+        'applications' => 'Žiadosti',
+        'id' => 'Číslo žiadosti',
+        'status' => 'Stav',
+        'updated' => 'Stav žiadosti bol zmenený',
         'application-status' => [
-            'no_action' => 'No action',
-            'invited_for_interview' => 'Invited for interview',
-            'rejection_email_sent' => 'Rejection e-mail sent'
+            'no_action' => 'Žiadna akcia',
+            'invited_for_interview' => 'Uchádzač bol pozvaný na pohovor',
+            'rejection_email_sent' => 'Uchádzačovi bol poslaný odmietací e-mail'
         ]
     ],
     'statistics' => [
@@ -51,10 +53,10 @@
     ],
     'user' => [
         'site' => 'Čerpacie stanice (len pre Manažérov čerpacích staníc)',
-        'sites' => 'Sites (required only for Retailers)',
+        'sites' => 'Stanica (povinné iba pre Prevádzkovateľov)',
     ],    
     'export' => [
-        'export_to_excel' => 'Export to Excel'
+        'export_to_excel' => 'Export do Excelu'
     ]
 
 ];
