@@ -1,6 +1,6 @@
 
 # DO NOT CACHE
-<filesMatch "\.(html|js|css)$">
+<filesMatch "\.(html|js|css|json)$">
 	FileETag None
 	<ifModule mod_headers.c>
 		Header unset ETag
