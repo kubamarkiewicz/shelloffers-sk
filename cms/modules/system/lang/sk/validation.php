@@ -14,11 +14,11 @@ return [
     */
 
   
-    "required"         => "The :attribute field is required..",
+    "required"         => "Pole :attribute je vyžadované",
     "between"          => [
-        "string"       => "The :attribute must be between :min - :max characters..",
+        "string"       => "Pole :attribute musí mať :min  - :max znakov",
     ],
-    "email"            => "The :attribute format is invalid..",
-    "confirmed"        => "The :attribute confirmation does not match.",
+    "email"            => "Formát :attribute je neplatný",
+    "confirmed"        => ":attribute je neplatné",
 
 ];

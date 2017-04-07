@@ -89,7 +89,7 @@ return [
     'system' => [
         'categories' => [
             'mail' => 'Mail',
-            'system' => 'System',
+            'system' => 'Systém',
         ]
     ]
 ];
