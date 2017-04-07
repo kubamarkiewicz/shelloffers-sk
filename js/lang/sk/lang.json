@@ -24,7 +24,11 @@
 		"required-fields" : "* povinné polia",
 		"send" : "Odoslať",
 		"field-required" : "Toto pole je povinné",
-		"email-required" : "Zadajte e-mailovú adresu"
+		"email-required" : "Zadajte e-mailovú adresu",
+		"tel-required" : "Zadejte telefonní číslo",
+		"filesize-limit" : "Příloha nesmí být větší než",
+		"file-extension" : "Příloha musí být v jednom z formátů: .doc, .docx, .rtf, .pdf",
+		"maxlenght" : "Zůstává Vám {0} znaků"
 	},
 
 	"application-sent" : {
