@@ -16,7 +16,7 @@
 ----------------------------------*/
 .ui-widget {
 	font-family: 'Roboto', Arial, sans-serif;
-	font-size: 0.9em;
+	font-size: 1em;
 }
 .ui-widget .ui-widget {
 	font-size: 1em;
@@ -30,7 +30,7 @@
 }
 .ui-widget.ui-widget-content {
 	border: 1px solid #fff;
-	box-shadow: 0px 4px 5px rgba(0,0,0,0.25);
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 }
 .ui-widget-content {
 	border: 1px solid #eee;
@@ -458,4 +458,21 @@ a.ui-button:active,
 
 .ui-datepicker th {
 	text-transform: uppercase;
+	font-weight: normal;
+	color: #999;
+	font-size: 11px;
+}
+
+#ui-datepicker-div {
+	margin-top: 5px;
+	border-radius: 3px;
+	padding: 8px;
+	box-sizing: content-box;
+}
+
+.ui-datepicker .ui-datepicker-next span {
+	background-position: -32px -16px;
+}
+.ui-datepicker .ui-datepicker-prev span {
+	background-position: -96px -16px;
 }
