@@ -42,8 +42,8 @@ class ApplicationsController extends Controller
 
         $result = Mail::send('shell.offers::mail.application', $vars, function($message) use ($offer) {
 
-            // $message->to($offer->station->email);
-            $message->to('kuba.markiewicz@gmail.com');
+            $message->to($offer->station->email);
+            // $message->to('kuba.markiewicz@gmail.com');
             // $message->to('m.palak@wp.pl');
 
             for ($i = 1; $i <= 2; $i++) {
