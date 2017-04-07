@@ -42,14 +42,16 @@ class ApplicationsController extends Controller
 
         $result = Mail::send('shell.offers::mail.application', $vars, function($message) use ($offer) {
 
-            $message->to($offer->station->email);
-            // $message->to('kuba.markiewicz@gmail.com');
+            // $message->to($offer->station->email);
+            $message->to('kuba.markiewicz@gmail.com');
             // $message->to('m.palak@wp.pl');
 
             for ($i = 1; $i <= 2; $i++) {
                 @$fileData = $_FILES['file_'.$i];
                 if ($fileData) {
-                    $message->attach($fileData['tmp_name'], ['as' => $fileData['name'], 'mime' => $fileData['type']]);
+                    if ($fileData['size'] <= 5200000) { // validate filesize
+                        $message->attach($fileData['tmp_name'], ['as' => $fileData['name'], 'mime' => $fileData['type']]);
+                    }
                 }
             }
 

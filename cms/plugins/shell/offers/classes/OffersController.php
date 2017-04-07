@@ -3,6 +3,7 @@
 use Illuminate\Routing\Controller;
 use Input;
 use DB;
+use Shell\Offers\Models\Offer;
 
 class OffersController extends Controller
 {
@@ -64,6 +65,13 @@ class OffersController extends Controller
         $result->offers = DB::select(DB::raw($sql));
 
         return response()->json($result, 200, array(), JSON_PRETTY_PRINT);
+    }
+
+    public function get($id)
+    {
+        $offer = Offer::with('station', 'job_title')->find($id);
+
+        return response()->json($offer, 200, array(), JSON_PRETTY_PRINT);
     }
 
 }
