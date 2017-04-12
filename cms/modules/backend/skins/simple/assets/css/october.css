@@ -993,5 +993,5 @@ body.flyout-visible .flyout-overlay{background-color:rgba(0,0,0,0.3)}
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     /* IE10+ CSS styles go here */
-	.layout > .layout-cell{height:500px}
+	.layout.flyout-container > .layout-cell{height:500px}
 }
