@@ -632,7 +632,7 @@ body{font-family:sans-serif;background:#f9f9f9;-webkit-font-smoothing:antialiase
 .layout > .layout-row > .layout-cell.center{text-align:center}
 .layout > .layout-row > .layout-cell.middle{vertical-align:middle}
 .layout > .layout-row.min-size{height:0}
-.layout > .layout-cell{display:table-cell;vertical-align:top;height:500px}
+.layout > .layout-cell{display:table-cell;vertical-align:top;height:100%}
 .layout > .layout-cell.width-100{width:100px}
 .layout > .layout-cell.width-120{width:120px}
 .layout > .layout-cell.width-130{width:130px}
@@ -976,6 +976,12 @@ body.outer .layout > .layout-row > .layout-cell .outer-form-container .horizonta
 .fancy-layout .field-codeeditor{border:none !important;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
 .fancy-layout .field-codeeditor .editor-code{-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
 .fancy-layout .field-richeditor{border:none;border-left:1px solid #d1d6d9 !important}
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+	.layout > .layout-cell{height:500px}
+}
 .fancy-layout .field-richeditor,.fancy-layout .field-richeditor .fr-toolbar,.fancy-layout .field-richeditor .fr-wrapper{-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;border-top-right-radius:0;border-top-left-radius:0}
 .fancy-layout .secondary-content-tabs .field-richeditor .fr-toolbar{background:white}
 body.side-panel-not-fixed .fancy-layout .field-richeditor{border-left:none}
