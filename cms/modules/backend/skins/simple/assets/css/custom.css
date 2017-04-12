@@ -4,6 +4,7 @@ body {
 }
 nav#layout-mainmenu.navbar {
   background-color: #10161c;
+  overflow: hidden;
 }
 nav#layout-sidenav ul li a {
   -webkit-transition: 0.4s;
