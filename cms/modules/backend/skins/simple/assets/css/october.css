@@ -632,7 +632,7 @@ body{font-family:sans-serif;background:#f9f9f9;-webkit-font-smoothing:antialiase
 .layout > .layout-row > .layout-cell.center{text-align:center}
 .layout > .layout-row > .layout-cell.middle{vertical-align:middle}
 .layout > .layout-row.min-size{height:0}
-.layout > .layout-cell{display:table-cell;vertical-align:top;height:100%}
+.layout > .layout-cell{display:table-cell;vertical-align:top;height:500px}
 .layout > .layout-cell.width-100{width:100px}
 .layout > .layout-cell.width-120{width:120px}
 .layout > .layout-cell.width-130{width:130px}
