@@ -977,11 +977,6 @@ body.outer .layout > .layout-row > .layout-cell .outer-form-container .horizonta
 .fancy-layout .field-codeeditor .editor-code{-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
 .fancy-layout .field-richeditor{border:none;border-left:1px solid #d1d6d9 !important}
 
-
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    /* IE10+ CSS styles go here */
-	.layout > .layout-cell{height:500px}
-}
 .fancy-layout .field-richeditor,.fancy-layout .field-richeditor .fr-toolbar,.fancy-layout .field-richeditor .fr-wrapper{-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;border-top-right-radius:0;border-top-left-radius:0}
 .fancy-layout .secondary-content-tabs .field-richeditor .fr-toolbar{background:white}
 body.side-panel-not-fixed .fancy-layout .field-richeditor{border-left:none}
@@ -994,3 +989,9 @@ html.gecko .fancy-layout .control-tabs.secondary-tabs > div > ul.nav-tabs > li.a
 .flyout-toggle:hover i{color:#ffffff}
 body.flyout-visible{overflow:hidden}
 body.flyout-visible .flyout-overlay{background-color:rgba(0,0,0,0.3)}
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+	.layout > .layout-cell{height:500px}
+}
