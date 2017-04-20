@@ -43,6 +43,9 @@ class Offers extends Controller
             $form->getField('activated_from')->disabled = 1;
             $form->getField('activated_to')->disabled = 1;
         }
+        if (($form->context == 'create')) {
+            $form->getField('created_by')->value = $this->user->id;
+        }
     }
 
     public function listExtendQuery($query)
