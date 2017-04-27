@@ -3,6 +3,7 @@
 use Model;
 use Db;
 use BackendAuth;
+use Backend\Models\User;
 
 /**
  * Model
@@ -83,6 +84,17 @@ class Station extends Model
         }
 
         return $query->lists('city');
+    }
+
+
+    public function getRetailer() 
+    {
+        $sql = "SELECT u.* FROM backend_users AS u
+                JOIN backend_users_groups AS r ON r.user_id = u.id
+                WHERE r.user_group_id = ".BackendAuth::getUser()->getRetailersGroupId();
+        $users = DB::select(DB::raw($sql));
+
+        return $users ? $users[0] : false;
     }
 
     

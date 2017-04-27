@@ -43,8 +43,18 @@ class ApplicationsController extends Controller
 
         $result = Mail::send('shell.offers::mail.application', $vars, function($message) use ($offer) {
 
-            $message->to($offer->station->email);
-            // $message->to('kuba.markiewicz@gmail.com');
+            $to = null;
+            if ($offer->job_title->is_site_manager) { // send to Retailer
+                $retailer = $offer->station->getRetailer();
+                if ($retailer) {
+                    $to = $retailer->email;
+                }
+            }
+            if (!$to) {  // send to Site email
+                $to = $offer->station->email;
+            }
+            // $to = 'kuba.markiewicz@gmail.com';
+            $message->to($to);
 
             for ($i = 1; $i <= 2; $i++) {
                 @$fileData = $_FILES['file_'.$i];

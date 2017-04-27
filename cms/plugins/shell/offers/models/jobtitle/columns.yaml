@@ -4,3 +4,6 @@ columns:
         type: text
         searchable: true
         sortable: true
+    is_site_manager:
+        label: 'shell.offers::lang.job-title.is-site-manager'
+        type: switch

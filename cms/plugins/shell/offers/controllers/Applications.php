@@ -32,11 +32,16 @@ class Applications extends Controller
         $query->leftJoin('shell_offers_stations', 'shell_offers_offers.station_id', '=', 'shell_offers_stations.id');
         $query->leftJoin('shell_offers_job_titles', 'shell_offers_offers.job_title_id', '=', 'shell_offers_job_titles.id');
 
-        // filter by stations assigned to current user
+
         if ($this->user->isManager()) {
+            // filter by stations assigned to current user
             $query->where("shell_offers_offers.station_id", '=', $this->user->station_id);
+
+            // hide applications for 'site manager' position
+            $query->where('shell_offers_job_titles.is_site_manager', '<>', 1);
         }
         else if ($this->user->isRetailer()) {
+            // filter by stations assigned to current user
             $query->whereIn('shell_offers_offers.station_id', $this->user->getStationsIds());
         }
     }
