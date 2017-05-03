@@ -27,11 +27,9 @@ fields:
     job_title:
         label: 'shell.offers::lang.job-title.job-title'
         oc.commentPosition: ''
-        nameFrom: name
-        descriptionFrom: offer_template
         span: auto
         required: 1
-        type: relation
+        type: dropdown
         emptyOption: ' '
     activated_to:
         label: 'shell.offers::lang.offer.valid-to'
