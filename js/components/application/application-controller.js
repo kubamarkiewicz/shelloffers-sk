@@ -1,4 +1,4 @@
-app.controller('ApplicationController',function($scope, $rootScope, $http, $routeParams, config, shellAnalyticsService, $translate) {  
+app.controller('ApplicationController',function($scope, $rootScope, $http, $routeParams, config, $translate) {  
 
     $scope.offerData = null;
 
