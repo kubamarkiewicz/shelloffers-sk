@@ -55,11 +55,16 @@ class Offers extends Controller
         $query->leftJoin('shell_offers_stations', 'shell_offers_offers.station_id', '=', 'shell_offers_stations.id');
         
         
-        // filter offers by stations assigned to current user
         if ($this->user->isManager()) {
+            // filter by stations assigned to current user
             $query->where('station_id', '=', $this->user->station_id);
+
+            // hide offers for 'site manager' position
+            $query->leftJoin('shell_offers_job_titles', 'shell_offers_offers.job_title_id', '=', 'shell_offers_job_titles.id');
+            $query->where('shell_offers_job_titles.is_site_manager', '<>', 1);
         }
         else if ($this->user->isRetailer()) {
+            // filter by stations assigned to current user
             $query->whereIn('station_id', $this->user->getStationsIds());
         }
 

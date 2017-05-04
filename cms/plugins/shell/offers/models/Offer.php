@@ -3,6 +3,7 @@
 use Model;
 use Shell\Offers\Models\Station;
 use Shell\Offers\Models\Province;
+use Shell\Offers\Models\JobTitle;
 use DB;
 use BackendAuth;
 
@@ -97,6 +98,25 @@ class Offer extends Model
             0 => trans('backend::lang.list.column_switch_false'),
             1 => trans('backend::lang.list.column_switch_true')
         ];
+    }
+
+
+
+
+    public function getJobTitleOptions()
+    {
+        $query = JobTitle::select('id', 'name');
+        $user = BackendAuth::getUser();
+
+        if ($user->isManager()) {
+            $query->where('is_site_manager', '<>', 1);
+        }
+
+        $options = $query->lists('name', 'id');
+        if ($options) foreach ($options as $key => $value) {
+            $options[$key] = $value;
+        }
+        return $options;
     }
 
 

@@ -23,7 +23,9 @@
         'job-titles' => 'Pracovné miesta',
         'name' => 'Názov pracovného miesta',
         'description' => 'Šablóna pracovnej ponuky',
-        'id' => 'Číslo pracovného miesta'
+        'id' => 'Číslo pracovného miesta',
+        'is-site-manager' => 'Site Manager',
+        'is-site-manager-description' => 'When this option is selected applications for this position will be sent to the email address of Retailer instead of Site Manager. Site Manager will not see job offers nor applications for this position.'
     ],
     'offer' => [
         'job-offer' => 'Ponuka práce',

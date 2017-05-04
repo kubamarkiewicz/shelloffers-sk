@@ -105,8 +105,8 @@ app.controller('ApplicationController',function($scope, $rootScope, $http, $rout
             return false;
         }
 
-        // send Shell Analytics data
-        shellAnalyticsService.onApplicationSent();
+        // adobe analytics track submit event
+        _satellite.track('submit');
 
         var url = config.api.urls.postApplication;
 

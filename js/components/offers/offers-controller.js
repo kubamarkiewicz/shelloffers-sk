@@ -115,4 +115,13 @@ app.controller('OffersController', function($scope, $rootScope, $http, config) {
         $scope.offersCount = data.totalCount;
     });
 
+    
+    $scope.apply = function (event) {
+
+        // adobe analytics track apply event
+        _satellite.track('apply');
+
+    }
+
+
 });

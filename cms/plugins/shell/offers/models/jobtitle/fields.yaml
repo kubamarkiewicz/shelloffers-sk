@@ -4,6 +4,11 @@ fields:
         oc.commentPosition: ''
         span: left
         type: text
+    is_site_manager:
+        label: 'shell.offers::lang.job-title.is-site-manager'
+        span: right
+        type: switch
+        comment: 'shell.offers::lang.job-title.is-site-manager-description'
     offer_template:
         label: 'shell.offers::lang.job-title.description'
         size: giant
