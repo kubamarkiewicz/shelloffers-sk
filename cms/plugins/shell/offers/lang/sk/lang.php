@@ -46,7 +46,7 @@
         'updated' => 'Stav žiadosti bol zmenený',
         'application-status' => [
             'no_action' => 'Žiadna akcia',
-            'invited_for_interview' => 'Uchádzač bol pozvaný na pohovor',
+            'invited_for_interview' => 'Uchádzač bol pozvaný na pohovor a prijatý',
             'rejection_email_sent' => 'Uchádzačovi bol poslaný odmietací e-mail'
         ]
     ],
