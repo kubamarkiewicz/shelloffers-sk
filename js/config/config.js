@@ -1,7 +1,7 @@
 
 window.config = window.config || {};
 
-window.config.env = "dev"; // dev|prod
+window.config.env = "prod"; // dev|prod
 
 window.config.lang = "sk";
 
