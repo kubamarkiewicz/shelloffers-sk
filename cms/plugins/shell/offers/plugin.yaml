@@ -29,6 +29,12 @@ permissions:
     delete_job_offers:
         tab: Offers
         label: 'Delete job offers'
+    export_applications:
+        tab: Offers
+        label: 'Export applications'
+    export_offers:
+        tab: Offers
+        label: 'Export offers'
 navigation:
     main-menu-item:
         label: 'shell.offers::lang.plugin.name'
